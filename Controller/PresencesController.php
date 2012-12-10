@@ -49,15 +49,102 @@ class PresencesController extends AppController {
 		}
 		$people = $this->Presence->Person->find('list');
 
+/*
 		// regular view code here
 		$subscriptions = $this->Presence->Subscription->find('all', array(
 			'contain' => array('SubscriptionType')
-		));
+		));		
 		// create a key-value that the FormHelper recognizes
 		$subscriptions = Set::combine($subscriptions , '{n}.Subscription.id', '{n}.SubscriptionType.name');
 
 		$this->set(compact('people', 'subscriptions'));
+*/
+		$this->set(compact('people'));
 	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add_to_person() {		
+
+		if ($this->request->is('post')) {
+			$this->Presence->create();
+			if ($this->Presence->save($this->request->data)) {
+
+				//nel caso in cui si tratti di un abbonamento "prepaid" scalo 1 credito all'utente
+				$subscription_type_id = $this->request->data['Presence']['subscription_type'];
+				if ($subscription_type_id != -1) {
+					$subscription_type = $this->Presence->Person->Subscription->SubscriptionType->read(array(), $subscription_type_id);										
+					if ($subscription_type['SubscriptionType']['prepaid']) {
+
+
+					}
+				}
+
+
+
+				$this->Session->setFlash(__('The presence has been saved'));
+
+				//$this->redirect(array('action' => 'index'));				
+
+			} else {
+				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+			}
+		} else {
+			//$this->request->data = $this->Person->read(null, $id);
+		}
+
+		// load the person specified by the named parameter "person_id"
+		$par_person_id = $this->request->params['named']['person_id'];
+		$person = $this->Presence->Person->read(null, $par_person_id);
+		$this->set(compact('person'));
+
+		//seleziono gli abbonamenti validi dell'utente corrente
+		$valid_subscription_types = $this->Presence->Person->Subscription->SubscriptionType->find('list', 
+			array(
+				'joins' => array(
+					array(
+						'table'=>'subscriptions', 
+						'alias' => 'Subscription',
+						'type'=>'inner',
+						'conditions'=> array('SubscriptionType.id = Subscription.subscription_type_id')
+					)
+				),
+				'conditions' => array(
+					'Subscription.person_id' => $par_person_id,
+					'Subscription.valid_from <=' => date('Y-m-d'),
+					'Subscription.valid_to >=' => date('Y-m-d')
+				)
+			)
+		);
+
+		//
+		$valid_subscription_types = $valid_subscription_types 
+			+ array(-1 => __('Ingresso Singolo')
+		);
+
+		$this->set(compact('valid_subscription_types', 'par_person_id'));
+
+		/*
+		$people = $this->Presence->Person->find('all', array(
+			'id' => $par_person_id
+		));		*/
+
+/*
+		// regular view code here
+		$subscriptions = $this->Presence->Subscription->find('all', array(
+			'contain' => array('SubscriptionType')
+		));		
+		// create a key-value that the FormHelper recognizes
+		$subscriptions = Set::combine($subscriptions , '{n}.Subscription.id', '{n}.SubscriptionType.name');
+
+		$this->set(compact('people', 'subscriptions'));
+*/
+		//$this->set(compact('people'));
+	}
+
 
 /**
  * edit method
@@ -82,8 +169,7 @@ class PresencesController extends AppController {
 			$this->request->data = $this->Presence->read(null, $id);
 		}
 		$people = $this->Presence->Person->find('list');
-		$subscriptions = $this->Presence->Subscription->find('list');
-		$this->set(compact('people', 'subscriptions'));
+		$this->set(compact('people'));
 	}
 
 /**

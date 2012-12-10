@@ -112,6 +112,7 @@ class PeopleController extends AppController {
  * @param string $id
  * @return void
  */
+/*
 	public function incrementPrepaidPresences($id = null) {
 		$this->Person->id = $id;
 		if (!$this->Person->exists()) {
@@ -133,5 +134,6 @@ class PeopleController extends AppController {
 			$this->redirect(array('action' => 'index'));		
 		}	
 	}
-
+*/
+	
 }

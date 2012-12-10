@@ -48,13 +48,15 @@ class SubscriptionsController extends AppController {
 		$valid_subscription = $this->getValidSubscription($person_id);
 			
 		if ($valid_subscription) {			
+			debug($valid_subscription);
+
 			$message = 'Attenzione: l\'utente "%s %s" possiede gi&agrave; un abbonamento "%s" in corso,<br /> valido dal %s al %s.';										
-			$this->Session->setFlash(sprintf($message, 
-				$valid_subscription['Person']['cognome'], 
-				$valid_subscription['Person']['nome'], 
-				$valid_subscription['Subscription']['tipo'], 
-				$valid_subscription['Subscription']['valido_dal'], 
-				$valid_subscription['Subscription']['valido_al']
+			$this->Session->setFlash(sprintf($message,
+				$valid_subscription['Person']['name'],
+				$valid_subscription['Person']['surname'], 				
+				$valid_subscription['SubscriptionType']['name'],
+				$valid_subscription['Subscription']['valid_from'], 
+				$valid_subscription['Subscription']['valid_to']
 			));
 		}
 		
@@ -127,23 +129,34 @@ class SubscriptionsController extends AppController {
 
 	
 /*
-*
+*	Cerca gli abbonamenti valido per l'utente indicato.
+*	Se non è stato possibile trovare alcun abbonamento valido restituisce false.
 */
-	public function getValidSubscription($person_id = null) {
+	public function getValidSubscriptions($person_id = null) {
 		$retval = false;
 		
 		if ($person_id != null) {
-			$retval = $this->Subscription->find('first', 
+			$retval = $this->Subscription->find('all', 
 				array('conditions' => array(
 					'Subscription.person_id' => $person_id,
 					'Subscription.valid_from <=' => date('Y-m-d'),
-					'Subscription.valid_to >=' => date('Y-m-d')
+					'Subscription.valid_to >=' => date('Y-m-d'),
+					'OR' => array(
+						'SubscriptionType.prepaid' => false,
+						'AND' => array(
+							'SubscriptionType.prepaid' => true,
+							'Subscription.prepaid_count >' => 0
+						)
+					)
 				))
 			);
-		}	
+		}
 		
 		return $retval;
 	}
+
+	
+	
 
 
 }

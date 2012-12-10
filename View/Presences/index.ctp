@@ -6,7 +6,6 @@
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('subscription_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -17,10 +16,7 @@
 		<td><?php echo h($presence['Presence']['modified']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($presence['Person']['name'], array('controller' => 'people', 'action' => 'view', $presence['Person']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($presence['Subscription']['id'], array('controller' => 'subscriptions', 'action' => 'view', $presence['Subscription']['id'])); ?>
-		</td>
+		</td>		
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $presence['Presence']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $presence['Presence']['id'])); ?>

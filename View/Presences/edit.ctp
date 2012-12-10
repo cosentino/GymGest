@@ -5,7 +5,6 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('person_id');
-		echo $this->Form->input('subscription_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

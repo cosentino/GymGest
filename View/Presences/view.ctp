@@ -21,11 +21,6 @@
 			<?php echo $this->Html->link($presence['Person']['name'], array('controller' => 'people', 'action' => 'view', $presence['Person']['id'])); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Subscription'); ?></dt>
-		<dd>
-			<?php echo $this->Html->link($presence['Subscription']['id'], array('controller' => 'subscriptions', 'action' => 'view', $presence['Subscription']['id'])); ?>
-			&nbsp;
-		</dd>
 	</dl>
 </div>
 <div class="actions">

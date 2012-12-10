@@ -69,11 +69,22 @@
 							App::import('Controller', 'Subscriptions');// We need to load the class
 							$Subscriptions = new SubscriptionsController;// If we want the model associations, components, etc to be loaded							
 							
-							$valid_subscription = $Subscriptions->getValidSubscription($person['Person']['id']);
-							
-							if ($valid_subscription) {
-								echo h($valid_subscription['SubscriptionType']['name']) . 
-									" (Expiry: " . h($valid_subscription['Subscription']['valid_to']) . ")";
+							$valid_subscriptions = $Subscriptions->getValidSubscriptions($person['Person']['id']);
+							if ($valid_subscriptions) {
+								$valid_subscription = current($valid_subscriptions);
+
+								//CASO Subscription contenente degli ingressi prepagati:
+								//	mostro il numero di ingressi rimanenti
+								if ($valid_subscription['SubscriptionType']['prepaid'] == true) {									
+									echo h($valid_subscription['SubscriptionType']['name']) . 
+										" (Left: " . h($valid_subscription['Subscription']['prepaid_count']) . ")";
+								}
+								//CASO Subscription di tipo Abbonamento:
+								// mostro la data di scadenza dell'abbonamento
+								else {
+									echo h($valid_subscription['SubscriptionType']['name']) . 
+										" (Expiry: " . h($valid_subscription['Subscription']['valid_to']) . ")";
+								}								
 							} else {
 								echo __('None');
 							}
@@ -87,21 +98,50 @@
 					</em>
 				</td>
 				<td>
-					<em>
-						<?php echo __('Prepaid presences:') ?>
-						<?php echo h($person['Person']['prepaid_presences']); ?>
-					</em>
+					<em><?php echo __('Memberships:') ?></em>					
+					<?php 					
+					if ($person['Membership']) {
+						echo '<ul>';
+
+						App::import('Model', 'MembershipType');// We need to load the class
+						$MembershipType = new MembershipType;// If we want the model associations, components, etc to be loaded
+
+						foreach ($person['Membership'] as $membership):
+							$membership_type = $MembershipType->find('list', array(
+								'fields' => array('MembershipType.name'),
+								'conditions' => array('id' => $membership['membership_type_id'])
+							));
+
+							if ($membership_type) {
+								echo '<li>';
+								echo $this->Html->link(current($membership_type), array(
+									'controller'=>'memberships', 
+									'action' => 'view',
+									$membership['id']
+								));
+								echo '</li>';						
+							}
+						endforeach;
+
+						echo '</ul>';
+
+					} else {
+						echo __('None');
+					}
+					?>
 					<br />
-					<?php echo $this->Html->link(__('+ Prepaid presences'), array(
-						'controller'=>'people',
-						'action' => 'incrementPrepaidPresences',
+
+					<?php 
+					echo $this->Html->link(__('+ Membership'), array(
+						'controller'=>'memberships',
+						'action' => 'add',
 						$person['Person']['id']
 					)); ?>
 				</td>
 				<td class="actions">
 					<?php echo $this->Html->link(__('Register presence'), array(
 						'controller'=>'presences', 
-						'action' => 'add', 
+						'action' => 'add_to_person', 
 						'person_id' => $person['Person']['id']
 					)); ?>
 				</td>
