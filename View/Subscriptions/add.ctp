@@ -3,7 +3,7 @@
 	<fieldset>
 		<legend><?php echo __('Add Subscription'); ?></legend>
 	<?php
-		echo $this->Form->input('person_id');
+		echo $this->Form->input('person_id', array('default' => $par_person_id));
 		echo $this->Form->input('subscription_type_id');
 		echo $this->Form->input('valid_from');
 		echo $this->Form->input('valid_to');

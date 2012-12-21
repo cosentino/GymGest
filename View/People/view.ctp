@@ -26,11 +26,6 @@
 			<?php echo h($person['Person']['surname']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Prepaid Presences'); ?></dt>
-		<dd>
-			<?php echo h($person['Person']['prepaid_presences']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Gender'); ?></dt>
 		<dd>
 			<?php echo h($person['Person']['gender']); ?>
@@ -187,7 +182,6 @@
 		<th><?php echo __('Created'); ?></th>
 		<th><?php echo __('Modified'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
-		<th><?php echo __('Subscription Id'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php
@@ -198,7 +192,6 @@
 			<td><?php echo $presence['created']; ?></td>
 			<td><?php echo $presence['modified']; ?></td>
 			<td><?php echo $presence['person_id']; ?></td>
-			<td><?php echo $presence['subscription_id']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'presences', 'action' => 'view', $presence['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'presences', 'action' => 'edit', $presence['id'])); ?>
@@ -225,6 +218,7 @@
 		<th><?php echo __('Modified'); ?></th>
 		<th><?php echo __('Person Id'); ?></th>
 		<th><?php echo __('Subscription Type Id'); ?></th>
+		<th><?php echo __('Prepaid Count'); ?></th>
 		<th><?php echo __('Valid From'); ?></th>
 		<th><?php echo __('Valid To'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
@@ -238,6 +232,7 @@
 			<td><?php echo $subscription['modified']; ?></td>
 			<td><?php echo $subscription['person_id']; ?></td>
 			<td><?php echo $subscription['subscription_type_id']; ?></td>
+			<td><?php echo $subscription['prepaid_count']; ?></td>
 			<td><?php echo $subscription['valid_from']; ?></td>
 			<td><?php echo $subscription['valid_to']; ?></td>
 			<td class="actions">

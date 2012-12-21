@@ -26,6 +26,11 @@
 			<?php echo $this->Html->link($subscription['SubscriptionType']['name'], array('controller' => 'subscription_types', 'action' => 'view', $subscription['SubscriptionType']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Prepaid Count'); ?></dt>
+		<dd>
+			<?php echo h($subscription['Subscription']['prepaid_count']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Valid From'); ?></dt>
 		<dd>
 			<?php echo h($subscription['Subscription']['valid_from']); ?>

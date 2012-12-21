@@ -6,7 +6,6 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('surname');
-		echo $this->Form->input('prepaid_presences');
 		echo $this->Form->input('gender');
 		echo $this->Form->input('address');
 		echo $this->Form->input('zip');

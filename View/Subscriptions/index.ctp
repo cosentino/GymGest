@@ -7,6 +7,7 @@
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('subscription_type_id'); ?></th>
+			<th><?php echo $this->Paginator->sort('prepaid_count'); ?></th>
 			<th><?php echo $this->Paginator->sort('valid_from'); ?></th>
 			<th><?php echo $this->Paginator->sort('valid_to'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -23,6 +24,7 @@
 		<td>
 			<?php echo $this->Html->link($subscription['SubscriptionType']['name'], array('controller' => 'subscription_types', 'action' => 'view', $subscription['SubscriptionType']['id'])); ?>
 		</td>
+		<td><?php echo h($subscription['Subscription']['prepaid_count']); ?>&nbsp;</td>
 		<td><?php echo h($subscription['Subscription']['valid_from']); ?>&nbsp;</td>
 		<td><?php echo h($subscription['Subscription']['valid_to']); ?>&nbsp;</td>
 		<td class="actions">

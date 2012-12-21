@@ -38,6 +38,13 @@ class PresencesController extends AppController {
  * @return void
  */
 	public function add() {
+		//parameters
+		$par_person_id = null;
+		if (isset($this->request->params['named']['person_id']))
+		$par_person_id = $this->request->params['named']['person_id'];
+		$this->set(compact('par_person_id'));
+
+
 		if ($this->request->is('post')) {
 			$this->Presence->create();
 			if ($this->Presence->save($this->request->data)) {
@@ -63,51 +70,25 @@ class PresencesController extends AppController {
 	}
 
 /**
- * add method
+ * Aggiunge una presenza per la persona passata come named parameter.
+ * 
  *
  * @return void
  */
-	public function add_to_person() {		
-
-		if ($this->request->is('post')) {
-			$this->Presence->create();
-			if ($this->Presence->save($this->request->data)) {
-
-				//nel caso in cui si tratti di un abbonamento "prepaid" scalo 1 credito all'utente
-				$subscription_type_id = $this->request->data['Presence']['subscription_type'];
-				if ($subscription_type_id != -1) {
-					$subscription_type = $this->Presence->Person->Subscription->SubscriptionType->read(array(), $subscription_type_id);										
-					if ($subscription_type['SubscriptionType']['prepaid']) {
-
-
-					}
-				}
-
-
-
-				$this->Session->setFlash(__('The presence has been saved'));
-
-				//$this->redirect(array('action' => 'index'));				
-
-			} else {
-				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
-			}
-		} else {
-			//$this->request->data = $this->Person->read(null, $id);
-		}
-
-		// load the person specified by the named parameter "person_id"
+	public function add_to_person() {
+		//load the person specified by the named parameter "person_id"
 		$par_person_id = $this->request->params['named']['person_id'];
 		$person = $this->Presence->Person->read(null, $par_person_id);
-		$this->set(compact('person'));
+		$this->set(compact('par_person_id','person'));
 
-		//seleziono gli abbonamenti validi dell'utente corrente
-		$valid_subscription_types = $this->Presence->Person->Subscription->SubscriptionType->find('list', 
+		//seleziono gli abbonamenti validi per l'utente corrente
+		$valid_subscriptions = $this->Presence->Person->Subscription->find('list', 
 			array(
+				'fields' => array('Subscription.id','SubscriptionType.name'),
 				'joins' => array(
 					array(
-						'table'=>'subscriptions', 
-						'alias' => 'Subscription',
+						'table'=>'subscription_types', 
+						'alias' => 'SubscriptionType',
 						'type'=>'inner',
 						'conditions'=> array('SubscriptionType.id = Subscription.subscription_type_id')
 					)
@@ -120,29 +101,49 @@ class PresencesController extends AppController {
 			)
 		);
 
-		//
-		$valid_subscription_types = $valid_subscription_types 
-			+ array(-1 => __('Ingresso Singolo')
-		);
+		//agli abbonamenti validi aggiungo anche la voce 'Ingresso singolo'
+		$valid_subscriptions = $valid_subscriptions 
+			+ array(-1 => __('Ingresso Singolo'));
 
-		$this->set(compact('valid_subscription_types', 'par_person_id'));
+		//CASO: postback
+		if ($this->request->is('post')) {
 
-		/*
-		$people = $this->Presence->Person->find('all', array(
-			'id' => $par_person_id
-		));		*/
+			//creo e salvo un nuovo oggetto Presence con i dati inviati dal form
+			$this->Presence->create();
+			if ($this->Presence->save($this->request->data)) {
 
-/*
-		// regular view code here
-		$subscriptions = $this->Presence->Subscription->find('all', array(
-			'contain' => array('SubscriptionType')
-		));		
-		// create a key-value that the FormHelper recognizes
-		$subscriptions = Set::combine($subscriptions , '{n}.Subscription.id', '{n}.SubscriptionType.name');
+				//nel caso in cui si tratti di un abbonamento "prepaid" scalo 1 credito all'utente
+				$subscription_id = $this->request->data['Presence']['subscription_id'];
+				if ($subscription_id != -1) {
+					$selected_subscription = $this->Presence->Person->Subscription->read(array(), $subscription_id);
 
-		$this->set(compact('people', 'subscriptions'));
-*/
-		//$this->set(compact('people'));
+					if ($selected_subscription['SubscriptionType']['prepaid']) {
+						//decrement the subscription prepaid_count
+						$count = --$selected_subscription['Subscription']['prepaid_count'];
+						//and save it
+						if ($this->Presence->Person->Subscription->save($selected_subscription)) {
+							$this->Session->setFlash(__('The presence has been saved. ' . $count . ' entrance left.'));
+							$this->redirect(array('controller' => 'People', 'action' => 'index'));
+						} else {
+							$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+						}
+					}
+				}
+
+				$this->Session->setFlash(__('The presence has been saved'));
+				$this->redirect(array('controller' => 'People', 'action' => 'index'));				
+
+			} else {
+				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+			}
+
+		//CASO: non è un postback
+		} else {
+			//mostro semplicemente il form (add_to_person.ctp)
+			//$this->request->data = $this->Person->read(null, $id);
+		}
+
+		$this->set(compact('valid_subscriptions', 'par_person_id'));
 	}
 
 

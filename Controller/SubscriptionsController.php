@@ -38,17 +38,16 @@ class SubscriptionsController extends AppController {
  * @return void
  */
 	public function add() {
-		
-		$person_id = null;
+		//parameters	
+		$par_person_id = null;
 		if (isset($this->request->params['named']['person_id']))
-			$person_id = $this->request->params['named']['person_id'];
-	
-		$defaults = array('person_id' => $person_id);
+			$par_person_id = $this->request->params['named']['person_id'];
 		
-		$valid_subscription = $this->getValidSubscription($person_id);
-			
-		if ($valid_subscription) {			
-			debug($valid_subscription);
+		$this->set(compact('par_person_id'));
+		
+		$valid_subscriptions = $this->getValidSubscriptions($par_person_id);
+		if ($valid_subscriptions) {
+			$valid_subscription = current($valid_subscriptions);
 
 			$message = 'Attenzione: l\'utente "%s %s" possiede gi&agrave; un abbonamento "%s" in corso,<br /> valido dal %s al %s.';										
 			$this->Session->setFlash(sprintf($message,
@@ -73,7 +72,7 @@ class SubscriptionsController extends AppController {
 		}		
 		$people = $this->Subscription->Person->find('list');
 		$subscriptionTypes = $this->Subscription->SubscriptionType->find('list');
-		$this->set(compact('people', 'subscriptionTypes', 'person_id', 'defaults', 'valid_subscription'));
+		$this->set(compact('people', 'subscriptionTypes', 'valid_subscription'));
 	}
 
 /**

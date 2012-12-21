@@ -67,7 +67,7 @@
 						<?php 
 							
 							App::import('Controller', 'Subscriptions');// We need to load the class
-							$Subscriptions = new SubscriptionsController;// If we want the model associations, components, etc to be loaded							
+							$Subscriptions = new SubscriptionsController;// If we want the model associations, components, etc to be loaded
 							
 							$valid_subscriptions = $Subscriptions->getValidSubscriptions($person['Person']['id']);
 							if ($valid_subscriptions) {

@@ -104,36 +104,5 @@ class PeopleController extends AppController {
 		$this->Session->setFlash(__('Person was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
-
-/**
- * incrementPrepaidPresences method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-/*
-	public function incrementPrepaidPresences($id = null) {
-		$this->Person->id = $id;
-		if (!$this->Person->exists()) {
-			throw new NotFoundException(__('Invalid Person'));
-		}
-		
-		$person = $this->Person->read(null, $id);
-		$ival = intval($person['Person']['prepaid_presences']);
-		$ival += 10;
-		$person['Person']['prepaid_presences'] = strval($ival);
-		
-		if ($this->Person->save($person)) {
-			$this->Session->setFlash(__('Sono stati aggiunti 10 ingressi prepagati all\'utente "%s %s".', $person['Person']['name'], $person['Person']['surname']));
-			$this->redirect(array('action' => 'index'));
-		} else {
-			$this->Session->setFlash(__('Non &egrave; stato possible incrementare gli ingressi prepagati per questo utente.<br>'));
-			$this->Session->setFlash(__('Errori di compilazione'), 'errors', array('errors' => $this->Person->validationErrors),'errors'); 
-			//echo debug($this->Person->validationErrors);
-			$this->redirect(array('action' => 'index'));		
-		}	
-	}
-*/
 	
 }
