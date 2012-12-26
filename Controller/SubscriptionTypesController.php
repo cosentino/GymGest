@@ -41,10 +41,10 @@ class SubscriptionTypesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->SubscriptionType->create();
 			if ($this->SubscriptionType->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription type has been saved'));
+				$this->Session->setFlash(__('The subscription type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 	}
@@ -63,10 +63,10 @@ class SubscriptionTypesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->SubscriptionType->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription type has been saved'));
+				$this->Session->setFlash(__('The subscription type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->SubscriptionType->read(null, $id);
@@ -90,10 +90,10 @@ class SubscriptionTypesController extends AppController {
 			throw new NotFoundException(__('Invalid subscription type'));
 		}
 		if ($this->SubscriptionType->delete()) {
-			$this->Session->setFlash(__('Subscription type deleted'));
+			$this->Session->setFlash(__('Subscription type deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Subscription type was not deleted'));
+		$this->Session->setFlash(__('Subscription type was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

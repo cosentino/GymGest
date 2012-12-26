@@ -20,7 +20,7 @@ class PeopleController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Prg->commonProcess();
+		$this->Prg->commonProcess();		
         $this->paginate['conditions'] = $this->Person->parseCriteria($this->passedArgs);
 		$this->set('people', $this->paginate());
 	}
@@ -49,10 +49,10 @@ class PeopleController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Person->create();
 			if ($this->Person->save($this->request->data)) {
-				$this->Session->setFlash(__('The person has been saved'));
+				$this->Session->setFlash(__('The person has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The person could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The person could not be saved. Please, try again.','default',array(),"error"));
 			}
 		}
 	}
@@ -74,7 +74,7 @@ class PeopleController extends AppController {
 				$this->Session->setFlash(__('The person has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The person could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The person could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->Person->read(null, $id);
@@ -98,10 +98,10 @@ class PeopleController extends AppController {
 			throw new NotFoundException(__('Invalid person'));
 		}
 		if ($this->Person->delete()) {
-			$this->Session->setFlash(__('Person deleted'));
+			$this->Session->setFlash(__('Person deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Person was not deleted'));
+		$this->Session->setFlash(__('Person was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 	

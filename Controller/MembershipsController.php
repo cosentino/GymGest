@@ -41,10 +41,10 @@ class MembershipsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Membership->create();
 			if ($this->Membership->save($this->request->data)) {
-				$this->Session->setFlash(__('The membership has been saved'));
+				$this->Session->setFlash(__('The membership has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The membership could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The membership could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 		$people = $this->Membership->Person->find('list');
@@ -66,10 +66,10 @@ class MembershipsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Membership->save($this->request->data)) {
-				$this->Session->setFlash(__('The membership has been saved'));
+				$this->Session->setFlash(__('The membership has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The membership could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The membership could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->Membership->read(null, $id);
@@ -96,10 +96,10 @@ class MembershipsController extends AppController {
 			throw new NotFoundException(__('Invalid membership'));
 		}
 		if ($this->Membership->delete()) {
-			$this->Session->setFlash(__('Membership deleted'));
+			$this->Session->setFlash(__('Membership deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Membership was not deleted'));
+		$this->Session->setFlash(__('Membership was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

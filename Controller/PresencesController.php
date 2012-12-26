@@ -48,10 +48,10 @@ class PresencesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Presence->create();
 			if ($this->Presence->save($this->request->data)) {
-				$this->Session->setFlash(__('The presence has been saved'));
+				$this->Session->setFlash(__('The presence has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 		$people = $this->Presence->Person->find('list');
@@ -122,19 +122,19 @@ class PresencesController extends AppController {
 						$count = --$selected_subscription['Subscription']['prepaid_count'];
 						//and save it
 						if ($this->Presence->Person->Subscription->save($selected_subscription)) {
-							$this->Session->setFlash(__('The presence has been saved. ' . $count . ' entrance left.'));
+							$this->Session->setFlash(__('The presence has been saved. ' . $count . ' entrance left.'),"default",array(),"success");
 							$this->redirect(array('controller' => 'People', 'action' => 'index'));
 						} else {
-							$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+							$this->Session->setFlash(__('The presence could not be saved. Please, try again.'),"default",array(),"error");
 						}
 					}
 				}
 
-				$this->Session->setFlash(__('The presence has been saved'));
+				$this->Session->setFlash(__('The presence has been saved'),"default",array(),"success");
 				$this->redirect(array('controller' => 'People', 'action' => 'index'));				
 
 			} else {
-				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'),"default",array(),"error");
 			}
 
 		//CASO: non è un postback
@@ -161,10 +161,10 @@ class PresencesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Presence->save($this->request->data)) {
-				$this->Session->setFlash(__('The presence has been saved'));
+				$this->Session->setFlash(__('The presence has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The presence could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->Presence->read(null, $id);
@@ -190,10 +190,10 @@ class PresencesController extends AppController {
 			throw new NotFoundException(__('Invalid presence'));
 		}
 		if ($this->Presence->delete()) {
-			$this->Session->setFlash(__('Presence deleted'));
+			$this->Session->setFlash(__('Presence deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Presence was not deleted'));
+		$this->Session->setFlash(__('Presence was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -40,11 +40,11 @@ class CoursePricesController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			$this->CoursePrice->create();
-			if ($this->CoursePrice->save($this->request->data)) {
-				$this->Session->setFlash(__('The course price has been saved'));
+			if ($this->CoursePrice->save($this->request->data)) {				
+				$this->Session->setFlash(__('The course price has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course price could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course price could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 		$membershipTypes = $this->CoursePrice->MembershipType->find('list');
@@ -66,10 +66,10 @@ class CoursePricesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->CoursePrice->save($this->request->data)) {
-				$this->Session->setFlash(__('The course price has been saved'));
+				$this->Session->setFlash(__('The course price has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course price could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course price could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->CoursePrice->read(null, $id);
@@ -96,10 +96,10 @@ class CoursePricesController extends AppController {
 			throw new NotFoundException(__('Invalid course price'));
 		}
 		if ($this->CoursePrice->delete()) {
-			$this->Session->setFlash(__('Course price deleted'));
+			$this->Session->setFlash(__('Course price deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Course price was not deleted'));
+		$this->Session->setFlash(__('Course price was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

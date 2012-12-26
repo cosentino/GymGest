@@ -41,10 +41,10 @@ class MembershipTypesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->MembershipType->create();
 			if ($this->MembershipType->save($this->request->data)) {
-				$this->Session->setFlash(__('The membership type has been saved'));
+				$this->Session->setFlash(__('The membership type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The membership type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The membership type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 	}
@@ -63,10 +63,10 @@ class MembershipTypesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->MembershipType->save($this->request->data)) {
-				$this->Session->setFlash(__('The membership type has been saved'));
+				$this->Session->setFlash(__('The membership type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The membership type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The membership type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->MembershipType->read(null, $id);
@@ -90,10 +90,10 @@ class MembershipTypesController extends AppController {
 			throw new NotFoundException(__('Invalid membership type'));
 		}
 		if ($this->MembershipType->delete()) {
-			$this->Session->setFlash(__('Membership type deleted'));
+			$this->Session->setFlash(__('Membership type deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Membership type was not deleted'));
+		$this->Session->setFlash(__('Membership type was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

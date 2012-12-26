@@ -41,10 +41,10 @@ class SubscriptionPricesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->SubscriptionPrice->create();
 			if ($this->SubscriptionPrice->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription price has been saved'));
+				$this->Session->setFlash(__('The subscription price has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription price could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription price could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 		$membershipTypes = $this->SubscriptionPrice->MembershipType->find('list');
@@ -66,10 +66,10 @@ class SubscriptionPricesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->SubscriptionPrice->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription price has been saved'));
+				$this->Session->setFlash(__('The subscription price has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription price could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription price could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->SubscriptionPrice->read(null, $id);
@@ -96,10 +96,10 @@ class SubscriptionPricesController extends AppController {
 			throw new NotFoundException(__('Invalid subscription price'));
 		}
 		if ($this->SubscriptionPrice->delete()) {
-			$this->Session->setFlash(__('Subscription price deleted'));
+			$this->Session->setFlash(__('Subscription price deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Subscription price was not deleted'));
+		$this->Session->setFlash(__('Subscription price was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

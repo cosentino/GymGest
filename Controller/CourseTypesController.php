@@ -41,10 +41,10 @@ class CourseTypesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->CourseType->create();
 			if ($this->CourseType->save($this->request->data)) {
-				$this->Session->setFlash(__('The course type has been saved'));
+				$this->Session->setFlash(__('The course type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 	}
@@ -63,10 +63,10 @@ class CourseTypesController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->CourseType->save($this->request->data)) {
-				$this->Session->setFlash(__('The course type has been saved'));
+				$this->Session->setFlash(__('The course type has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course type could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->CourseType->read(null, $id);
@@ -90,10 +90,10 @@ class CourseTypesController extends AppController {
 			throw new NotFoundException(__('Invalid course type'));
 		}
 		if ($this->CourseType->delete()) {
-			$this->Session->setFlash(__('Course type deleted'));
+			$this->Session->setFlash(__('Course type deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Course type was not deleted'));
+		$this->Session->setFlash(__('Course type was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }

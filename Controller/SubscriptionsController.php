@@ -56,7 +56,7 @@ class SubscriptionsController extends AppController {
 				$valid_subscription['SubscriptionType']['name'],
 				$valid_subscription['Subscription']['valid_from'], 
 				$valid_subscription['Subscription']['valid_to']
-			));
+			),"default",array(),"warning");
 		}
 		
 		//$this->Session->setFlash('Avviso');
@@ -64,10 +64,10 @@ class SubscriptionsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Subscription->create();
 			if ($this->Subscription->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription has been saved'));
+				$this->Session->setFlash(__('The subscription has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}		
 		$people = $this->Subscription->Person->find('list');
@@ -89,10 +89,10 @@ class SubscriptionsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Subscription->save($this->request->data)) {
-				$this->Session->setFlash(__('The subscription has been saved'));
+				$this->Session->setFlash(__('The subscription has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The subscription could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The subscription could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->Subscription->read(null, $id);
@@ -119,10 +119,10 @@ class SubscriptionsController extends AppController {
 			throw new NotFoundException(__('Invalid subscription'));
 		}
 		if ($this->Subscription->delete()) {
-			$this->Session->setFlash(__('Subscription deleted'));
+			$this->Session->setFlash(__('Subscription deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Subscription was not deleted'));
+		$this->Session->setFlash(__('Subscription was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 

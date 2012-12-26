@@ -41,10 +41,10 @@ class CourseRegistrationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->CourseRegistration->create();
 			if ($this->CourseRegistration->save($this->request->data)) {
-				$this->Session->setFlash(__('The course registration has been saved'));
+				$this->Session->setFlash(__('The course registration has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course registration could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course registration could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		}
 		$courses = $this->CourseRegistration->Course->find('list');
@@ -66,10 +66,10 @@ class CourseRegistrationsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->CourseRegistration->save($this->request->data)) {
-				$this->Session->setFlash(__('The course registration has been saved'));
+				$this->Session->setFlash(__('The course registration has been saved'),"default",array(),"success");
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The course registration could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The course registration could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
 			$this->request->data = $this->CourseRegistration->read(null, $id);
@@ -96,10 +96,10 @@ class CourseRegistrationsController extends AppController {
 			throw new NotFoundException(__('Invalid course registration'));
 		}
 		if ($this->CourseRegistration->delete()) {
-			$this->Session->setFlash(__('Course registration deleted'));
+			$this->Session->setFlash(__('Course registration deleted'),"default",array(),"success");
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Course registration was not deleted'));
+		$this->Session->setFlash(__('Course registration was not deleted'),"default",array(),"error");
 		$this->redirect(array('action' => 'index'));
 	}
 }
