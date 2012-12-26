@@ -1,3 +1,6 @@
 [submodule "Plugin/DataTable"]
 	path = Plugin/DataTable
 	url = https://github.com/tigrang/cakephp-datatable.git
+[submodule "Plugin/TwitterBootstrap"]
+	path = Plugin/TwitterBootstrap
+	url = git://github.com/loadsys/twitter-bootstrap-helper
