@@ -1,0 +1,248 @@
+Add admin theme.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   .gitmodules
+#	modified:   Config/bootstrap.php
+#	modified:   Controller/AppController.php
+#	modified:   Controller/CoursePricesController.php
+#	modified:   Controller/CourseRegistrationsController.php
+#	modified:   Controller/CourseTypesController.php
+#	modified:   Controller/CoursesController.php
+#	modified:   Controller/MembershipTypesController.php
+#	modified:   Controller/MembershipsController.php
+#	modified:   Controller/PeopleController.php
+#	modified:   Controller/PresencesController.php
+#	modified:   Controller/SubscriptionPricesController.php
+#	modified:   Controller/SubscriptionTypesController.php
+#	modified:   Controller/SubscriptionsController.php
+#	modified:   Controller/UsersController.php
+#	new file:   Plugin/DataTable
+#	modified:   View/Layouts/default.ctp
+#	modified:   View/People/index.ctp
+#	modified:   View/Presences/index.ctp
+#	new file:   webroot/assets/css/error.min.css
+#	new file:   webroot/assets/css/fonts/icomoon/fonts/icomoon.svg
+#	new file:   webroot/assets/css/fonts/icomoon/style.css
+#	new file:   webroot/assets/css/login.min.css
+#	new file:   webroot/assets/css/mooncake.min.css
+#	new file:   webroot/assets/css/plugins/plugins.min.css
+#	new file:   webroot/assets/images/Descr.WD3
+#	new file:   webroot/assets/images/dt/Descr.WD3
+#	new file:   webroot/assets/images/dt/sort.png
+#	new file:   webroot/assets/images/dt/sort_asc.png
+#	new file:   webroot/assets/images/dt/sort_asc_d.png
+#	new file:   webroot/assets/images/dt/sort_desc.png
+#	new file:   webroot/assets/images/dt/sort_desc_d.png
+#	new file:   webroot/assets/images/icons/iconsweets/Descr.WD3
+#	new file:   webroot/assets/images/icons/iconsweets/icos-dark.png
+#	new file:   webroot/assets/images/icons/iconsweets/icos-white.png
+#	new file:   webroot/assets/images/icons/led/Descr.WD3
+#	new file:   webroot/assets/images/icons/led/sprite.png
+#	new file:   webroot/assets/images/icons/led/src/Descr.WD3
+#	new file:   webroot/assets/images/icons/led/src/key.png
+#	new file:   webroot/assets/images/icons/led/src/user.png
+#	new file:   webroot/assets/images/layout/Descr.WD3
+#	new file:   webroot/assets/images/layout/bg/Descr.WD3
+#	new file:   webroot/assets/images/layout/bg/arches.png
+#	new file:   webroot/assets/images/layout/bg/blu_stripes.png
+#	new file:   webroot/assets/images/layout/bg/bright_squares.png
+#	new file:   webroot/assets/images/layout/bg/brushed_alu.png
+#	new file:   webroot/assets/images/layout/bg/circles.png
+#	new file:   webroot/assets/images/layout/bg/climpek.png
+#	new file:   webroot/assets/images/layout/bg/connect.png
+#	new file:   webroot/assets/images/layout/bg/corrugation.png
+#	new file:   webroot/assets/images/layout/bg/cubes.png
+#	new file:   webroot/assets/images/layout/bg/diagonal-noise.png
+#	new file:   webroot/assets/images/layout/bg/diagonal_striped_brick.png
+#	new file:   webroot/assets/images/layout/bg/diamond_upholstery.png
+#	new file:   webroot/assets/images/layout/bg/diamonds.png
+#	new file:   webroot/assets/images/layout/bg/escheresque.png
+#	new file:   webroot/assets/images/layout/bg/fabric_plaid.png
+#	new file:   webroot/assets/images/layout/bg/furley_bg.png
+#	new file:   webroot/assets/images/layout/bg/gplaypattern.png
+#	new file:   webroot/assets/images/layout/bg/gradient_squares.png
+#	new file:   webroot/assets/images/layout/bg/grey.png
+#	new file:   webroot/assets/images/layout/bg/grilled.png
+#	new file:   webroot/assets/images/layout/bg/hexellence.png
+#	new file:   webroot/assets/images/layout/bg/lghtmesh.png
+#	new file:   webroot/assets/images/layout/bg/light_alu.png
+#	new file:   webroot/assets/images/layout/bg/light_checkered_tiles.png
+#	new file:   webroot/assets/images/layout/bg/light_honeycomb.png
+#	new file:   webroot/assets/images/layout/bg/littleknobs.png
+#	new file:   webroot/assets/images/layout/bg/nistri.png
+#	new file:   webroot/assets/images/layout/bg/noise_lines.png
+#	new file:   webroot/assets/images/layout/bg/noise_pattern_with_crosslines.png
+#	new file:   webroot/assets/images/layout/bg/noisy_grid.png
+#	new file:   webroot/assets/images/layout/bg/norwegian_rose.png
+#	new file:   webroot/assets/images/layout/bg/pineapplecut.png
+#	new file:   webroot/assets/images/layout/bg/pinstripe.png
+#	new file:   webroot/assets/images/layout/bg/project_papper.png
+#	new file:   webroot/assets/images/layout/bg/ravenna.png
+#	new file:   webroot/assets/images/layout/bg/reticular_tissue.png
+#	new file:   webroot/assets/images/layout/bg/retina_wood.png
+#	new file:   webroot/assets/images/layout/bg/rockywall.png
+#	new file:   webroot/assets/images/layout/bg/roughcloth.png
+#	new file:   webroot/assets/images/layout/bg/shattered.png
+#	new file:   webroot/assets/images/layout/bg/silver_scales.png
+#	new file:   webroot/assets/images/layout/bg/skelatal_weave.png
+#	new file:   webroot/assets/images/layout/bg/small-crackle-bright.png
+#	new file:   webroot/assets/images/layout/bg/small_tiles.png
+#	new file:   webroot/assets/images/layout/bg/square_bg.png
+#	new file:   webroot/assets/images/layout/bg/struckaxiom.png
+#	new file:   webroot/assets/images/layout/bg/subtle_stripes.png
+#	new file:   webroot/assets/images/layout/bg/vichy.png
+#	new file:   webroot/assets/images/layout/bg/washi.png
+#	new file:   webroot/assets/images/layout/bg/wavecut.png
+#	new file:   webroot/assets/images/layout/bg/weave.png
+#	new file:   webroot/assets/images/layout/bg/white_brick_wall.png
+#	new file:   webroot/assets/images/layout/bg/white_tiles.png
+#	new file:   webroot/assets/images/layout/bg/whitey.png
+#	new file:   webroot/assets/images/layout/bg/wood_pattern.png
+#	new file:   webroot/assets/images/layout/bg/worn_dots.png
+#	new file:   webroot/assets/images/layout/book-cover.png
+#	new file:   webroot/assets/images/layout/book-fold.png
+#	new file:   webroot/assets/images/layout/caret-left.png
+#	new file:   webroot/assets/images/layout/caret-right.png
+#	new file:   webroot/assets/images/layout/content-bg-gt1200.png
+#	new file:   webroot/assets/images/layout/content-bg.png
+#	new file:   webroot/assets/images/layout/dotted_border.png
+#	new file:   webroot/assets/images/layout/grids.png
+#	new file:   webroot/assets/images/layout/header-bg.png
+#	new file:   webroot/assets/images/layout/ie-nav-hover.png
+#	new file:   webroot/assets/images/layout/linen.png
+#	new file:   webroot/assets/images/layout/login-inner-bg.png
+#	new file:   webroot/assets/images/layout/login-wrap-bg.png
+#	new file:   webroot/assets/images/layout/mail-stripes.png
+#	new file:   webroot/assets/images/layout/point-arrows.png
+#	new file:   webroot/assets/images/layout/ribbon.png
+#	new file:   webroot/assets/images/layout/white-shadow.png
+#	new file:   webroot/assets/images/logo.png
+#	new file:   webroot/assets/images/pp.jpg
+#	new file:   webroot/assets/js/customizer.js
+#	new file:   webroot/assets/js/demo/alerts.js
+#	new file:   webroot/assets/js/demo/boxes.js
+#	new file:   webroot/assets/js/demo/calendar.js
+#	new file:   webroot/assets/js/demo/charts.js
+#	new file:   webroot/assets/js/demo/contact.js
+#	new file:   webroot/assets/js/demo/dashboard.js
+#	new file:   webroot/assets/js/demo/dataTables.js
+#	new file:   webroot/assets/js/demo/file_manager.js
+#	new file:   webroot/assets/js/demo/file_upload.js
+#	new file:   webroot/assets/js/demo/form.js
+#	new file:   webroot/assets/js/demo/form_validation.js
+#	new file:   webroot/assets/js/demo/form_wizard.js
+#	new file:   webroot/assets/js/demo/gallery.js
+#	new file:   webroot/assets/js/demo/mail.js
+#	new file:   webroot/assets/js/demo/statistic.js
+#	new file:   webroot/assets/js/demo/ui_comps.js
+#	new file:   webroot/assets/js/demo/widgets.js
+#	new file:   webroot/assets/js/demo/wysiwyg.js
+#	new file:   webroot/assets/js/libs/jquery-1.8.2.min.js
+#	new file:   webroot/assets/js/libs/jquery.mousewheel.min.js
+#	new file:   webroot/assets/js/libs/jquery.placeholder.min.js
+#	new file:   webroot/assets/js/login.js
+#	new file:   webroot/assets/js/setup.js
+#	new file:   webroot/assets/js/template.js
+#	new file:   webroot/assets/jui/css/jquery.ui.all.css
+#	new file:   webroot/assets/jui/jquery-ui.custom.css
+#	new file:   webroot/assets/jui/jquery-ui.custom.min.js
+#	new file:   webroot/assets/jui/jquery.ui.touch-punch.min.js
+#	new file:   webroot/assets/jui/js/jquery-ui-1.8.24.min.js
+#	new file:   webroot/assets/jui/spinner/jquery.ui.spinner.css
+#	new file:   webroot/assets/jui/spinner/jquery.ui.spinner.min.js
+#	new file:   webroot/assets/jui/timepicker/jquery-ui-timepicker.css
+#	new file:   webroot/assets/jui/timepicker/jquery-ui-timepicker.min.js
+#	new file:   webroot/bootstrap/css/bootstrap-login.min.css
+#	new file:   webroot/bootstrap/css/bootstrap.min.css
+#	new file:   webroot/bootstrap/js/bootstrap.min.js
+#	new file:   webroot/custom-plugins/bootstrap-fileinput.min.js
+#	new file:   webroot/custom-plugins/bootstrap-inputmask.min.js
+#	new file:   webroot/custom-plugins/circular-stat/circular-stat.css
+#	new file:   webroot/custom-plugins/circular-stat/circular-stat.min.js
+#	new file:   webroot/custom-plugins/contactlist/contactlist.css
+#	new file:   webroot/custom-plugins/contactlist/contactlist.min.js
+#	new file:   webroot/custom-plugins/picklist/picklist.css
+#	new file:   webroot/custom-plugins/picklist/picklist.min.js
+#	new file:   webroot/custom-plugins/wizard/jquery.form.min.js
+#	new file:   webroot/custom-plugins/wizard/wizard.css
+#	new file:   webroot/custom-plugins/wizard/wizard.min.js
+#	new file:   webroot/plugins/cleditor/images/buttons.png
+#	new file:   webroot/plugins/cleditor/jquery.cleditor.css
+#	new file:   webroot/plugins/cleditor/jquery.cleditor.icon.min.js
+#	new file:   webroot/plugins/cleditor/jquery.cleditor.min.js
+#	new file:   webroot/plugins/cleditor/jquery.cleditor.table.min.js
+#	new file:   webroot/plugins/cleditor/jquery.cleditor.xhtml.min.js
+#	new file:   webroot/plugins/datatables/TableTools/js/TableTools.min.js
+#	new file:   webroot/plugins/datatables/dataTables.bootstrap.js
+#	new file:   webroot/plugins/datatables/jquery.dataTables.columnFilter.js
+#	new file:   webroot/plugins/datatables/jquery.dataTables.min.js
+#	new file:   webroot/plugins/elfinder/css/elfinder.min.css
+#	new file:   webroot/plugins/elfinder/img/arrows-active.png
+#	new file:   webroot/plugins/elfinder/img/arrows-normal.png
+#	new file:   webroot/plugins/elfinder/img/crop.gif
+#	new file:   webroot/plugins/elfinder/img/dialogs.png
+#	new file:   webroot/plugins/elfinder/img/icons-big.png
+#	new file:   webroot/plugins/elfinder/img/logo.png
+#	new file:   webroot/plugins/elfinder/img/quicklook-bg.png
+#	new file:   webroot/plugins/elfinder/img/quicklook-icons.png
+#	new file:   webroot/plugins/elfinder/img/resize.png
+#	new file:   webroot/plugins/elfinder/img/spinner-mini.gif
+#	new file:   webroot/plugins/elfinder/img/toolbar.png
+#	new file:   webroot/plugins/elfinder/js/elfinder.min.js
+#	new file:   webroot/plugins/farbtastic/farbtastic.css
+#	new file:   webroot/plugins/farbtastic/farbtastic.min.js
+#	new file:   webroot/plugins/flot/jquery.flot.js
+#	new file:   webroot/plugins/flot/jquery.flot.min.js
+#	new file:   webroot/plugins/flot/plugins/jquery.flot.orderBars.min.js
+#	new file:   webroot/plugins/flot/plugins/jquery.flot.pie.min.js
+#	new file:   webroot/plugins/flot/plugins/jquery.flot.resize.min.js
+#	new file:   webroot/plugins/flot/plugins/jquery.flot.tooltip.min.js
+#	new file:   webroot/plugins/freetile/jquery.freetile.min.js
+#	new file:   webroot/plugins/freetile/jquery.resize.min.js
+#	new file:   webroot/plugins/fullcalendar/fullcalendar.css
+#	new file:   webroot/plugins/fullcalendar/fullcalendar.min.js
+#	new file:   webroot/plugins/fullcalendar/fullcalendar.print.css
+#	new file:   webroot/plugins/ibutton/jquery.ibutton.css
+#	new file:   webroot/plugins/ibutton/jquery.ibutton.js
+#	new file:   webroot/plugins/ibutton/jquery.ibutton.min.js
+#	new file:   webroot/plugins/map/jquery.ui.map.extensions.js
+#	new file:   webroot/plugins/map/jquery.ui.map.min.js
+#	new file:   webroot/plugins/map/jquery.ui.map.services.min.js
+#	new file:   webroot/plugins/minicolors/jquery.minicolors.css
+#	new file:   webroot/plugins/minicolors/jquery.minicolors.min.js
+#	new file:   webroot/plugins/msgbox/jquery.msgbox.css
+#	new file:   webroot/plugins/msgbox/jquery.msgbox.min.js
+#	new file:   webroot/plugins/plupload/plupload.bootstrap/css/plupload.bootstrap.css
+#	new file:   webroot/plugins/plupload/plupload.bootstrap/img/delete.gif
+#	new file:   webroot/plugins/plupload/plupload.bootstrap/img/done.gif
+#	new file:   webroot/plugins/plupload/plupload.bootstrap/img/error.gif
+#	new file:   webroot/plugins/plupload/plupload.bootstrap/plupload.bootstrap.js
+#	new file:   webroot/plugins/plupload/plupload.full.js
+#	new file:   webroot/plugins/pnotify/jquery.pnotify.css
+#	new file:   webroot/plugins/pnotify/jquery.pnotify.min.js
+#	new file:   webroot/plugins/prettify/prettify.js
+#	new file:   webroot/plugins/prettify/themes/theme-balupton.css
+#	new file:   webroot/plugins/rating/jquery.rating.css
+#	new file:   webroot/plugins/rating/jquery.rating.min.js
+#	new file:   webroot/plugins/select2/select2.css
+#	new file:   webroot/plugins/select2/select2.min.js
+#	new file:   webroot/plugins/select2/select2.png
+#	new file:   webroot/plugins/select2/spinner.gif
+#	new file:   webroot/plugins/sparkline/jquery.sparkline.min.js
+#	new file:   webroot/plugins/tweet/jquery.tweet.min.js
+#	new file:   webroot/plugins/uniform/css/uniform.default.css
+#	new file:   webroot/plugins/uniform/jquery.uniform.min.js
+#	new file:   webroot/plugins/validate/jquery.validate.min.js
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	ho5aqobg.q44.txt
+#	webroot/assets/js/common.js
+#	webroot/plugins/DataTables-1.9.4/
+
