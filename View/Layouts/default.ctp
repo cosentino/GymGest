@@ -68,7 +68,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<?php echo $this->fetch('script'); ?>
+	<?php echo $this->fetch('scriptTop'); ?>
 </head>
 <body>
 
@@ -79,7 +79,7 @@
 					<div class="brand-wrap pull-left">
 						<div class="brand-img">
 							<a class="brand" href="#">
-								<img src="assets/images/logo.png" alt="">
+								<img src="<?php echo $this->base; ?>/assets/images/logo.png" alt="">
 							</a>
 						</div>
 					</div>
@@ -117,7 +117,7 @@
                                 </span>
                             	<div class="avatar">
                                 	<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                                    	<img src="assets/images/pp.jpg" alt="Avatar">
+                                    	<img src="<?php echo $this->base; ?>/assets/images/pp.jpg" alt="Avatar">
                                     </a>
                                     <ul class="dropdown-menu pull-right">
                                     	<li><a href="profile.html"><i class="icol-user"></i> My Profile</a></li>
@@ -141,179 +141,36 @@
             	<div id="content-outer">
                 	<div id="content-inner">                		
 			    	
-                    	<aside id="sidebar">
-                        	<nav id="navigation" class="collapse">
-                            	<ul>
-
-                            		<!-- ACCESS CONTROL & CHECK-IN -->
-                                	<li class="active">
-                                    	<span title="General">
-                                    		<i class="icon-home"></i>
-											<span class="nav-title">General</span>
-                                        </span>
-                                    	<ul class="inner-nav">
-											
-											<li class="active"><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('List Presences'), 
-												array('controller' => 'presences', 'action' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-ticket"></i> ' . __('New Presence'), 
-												array('controller' => 'presences', 'action' => 'add'), array('escape' => false)); ?> 
-												</li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('List Subscriptions'), 
-												array('controller' => 'subscriptions', 'action' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('New Subscriptions'), 
-												array('controller' => 'subscriptions', 'action' => 'add'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('List Subscription Types'), 
-												array('controller' => 'subscription_types', 'action' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('New Subscription Type'), 
-												array('controller' => 'subscription_types', 'add' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('List Subscription Price'), 
-												array('controller' => 'subscription_prices', 'add' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-traffic"></i> ' . __('New Subscription Price'), 
-												array('controller' => 'subscription_prices', 'add' => 'add'), array('escape' => false)); ?> </li>
-								                                        
-                                        </ul>
-                                    </li>
-
-                                    <!-- PEOPLE & MEMBERSHIPS -->
-                                	<li>
-                                    	<span title="<?php echo __('People') ?>">
-                                    		<i class="icon-users"></i>
-											<span class="nav-title"><?php echo __('People') ?></span>
-                                        </span>
-                                    	<ul class="inner-nav">
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-application-view-list"></i> ' . __('List People'), 
-												array('controller' => 'people', 'action' => 'index'), array('escape' => false)); ?> </li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-application-add"></i> ' . __('New Person'), 
-												array('controller' => 'people', 'action' => 'add'), array('escape' => false)); ?></li>
-                                        	
-											<li><?php echo $this->Html->link(
-												'<i class="icol-vcard"></i> ' . __('List Memberships'), 
-												array('controller' => 'memberships', 'action' => 'index'), array('escape' => false)); ?></li>
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-vcard"></i> ' . __('New Memberships'), 
-												array('controller' => 'memberships', 'action' => 'add'), array('escape' => false)); ?></li>
-	
-											<li><?php echo $this->Html->link(
-												'<i class="icol-zones"></i> ' . __('List Membership Types'), 
-												array('controller' => 'membership_types', 'action' => 'index'), array('escape' => false)); ?></li>								
-
-											<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New Membership Types'), 
-												array('controller' => 'membership_types', 'action' => 'add'), array('escape' => false)); ?></li>											
-
-										</ul>
-
-                                    </li>
-
-                                    <!-- COURSES -->
-									<li>
-										<span title="Courses">										
-											<!--<i class="icon-book"></i>
-											<i class="icon-briefcase"></i>
-                                        	<i class="icon-bell"></i>-->
-                                        	<i class="icon-bookmark"></i>
-											<span class="nav-title">Courses</span>
-                                        </span>
-                                    	<ul class="inner-nav">
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('List Courses'), 
-												array('controller' => 'courses', 'action' => 'index'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New Course'), 
-												array('controller' => 'courses', 'action' => 'add'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('List Course Registrations'), 
-												array('controller' => 'course_registrations', 'action' => 'index'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New Course Registration'), 
-												array('controller' => 'course_registrations', 'action' => 'add'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('List Course Types'), 
-												array('controller' => 'course_types', 'action' => 'index'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New Course Type'), 
-												array('controller' => 'course_types', 'action' => 'add'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('List Course Prices'), 
-												array('controller' => 'course_prices', 'action' => 'index'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New Course Price'), 
-												array('controller' => 'course_prices', 'action' => 'add'), array('escape' => false)); ?></li>
-
-										</ul>									
-									</li>
-
-                                    <!-- SETTINGS -->
-                                   	<li>
-                               			<span title="Settings">
-                                        	<i class="icon-cogs"></i>
-											<span class="nav-title">Settings</span>
-                                        </span>
-                                    	<ul class="inner-nav">
-                                   			
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('List Users'), 
-												array('controller' => 'course_prices', 'action' => 'index'), array('escape' => false)); ?></li>
-
-                                    		<li><?php echo $this->Html->link(
-												'<i class="icol-zone"></i> ' . __('New User'), 
-												array('controller' => 'course_prices', 'action' => 'add'), array('escape' => false)); ?></li>
-									
-										</ul>
-                                   	</li>
-
-
-                                </ul>
-                            </nav>
-                        </aside>
-
-                        <div id="sidebar-separator"></div>
+                    	<?php echo $this->element('sidebar'); ?>
 
                     	<section id="main" class="clearfix">
-                			<div id="main-header" class="page-header">
-                            	<ul class="breadcrumb">
-                                	<li>
-                                    	<i class="icon-home"></i>MoonCake
-                                        <span class="divider">&raquo;</span>
-                                    </li>
-                                    <li>
-                                    	<a href="#">Dashboard</a>
-                                    </li>
-                                </ul>
-                                
-                                <h1 id="main-heading">
-                                	Dashboard <span>This is the place where everything started</span>
-                                </h1>
-                            </div>
-                            
+                		
+                			<!-- Start View Block: Page Title -->
+                    		<?php if ($this->fetch('pageTitle')): ?>
+							<div id="main-header" class="page-header">
+
+								<ul class="breadcrumb">
+							    	<li>
+							        	<i class="icon-home"></i>MoonCake
+							            <span class="divider">&raquo;</span>
+							        </li>
+							        <li>
+							        	<a href="#"><?php echo $this->fetch('pageTitle'); ?></a>
+							        </li>
+							    </ul>
+							    
+							    <h1 id="main-heading">
+							    	<?php echo $this->fetch('pageTitle'); ?>
+							    	
+						    		<?php if ($this->fetch('pageTitle')): ?>
+							    	<span><?php echo $this->fetch('pageSubtitle'); ?></span>
+							    	<?php endif; ?>
+
+							    </h1>
+							</div>
+							<?php endif; ?>
+							<!-- End View Block: Page Title -->
+
                             <div id="main-content">
                 				<?php 
                 					//echo $this->Session->flash();
@@ -399,6 +256,7 @@
     <!-- Demo Scripts -->
     <script src="<?php echo $this->base; ?>/assets/js/common.js"></script>
 
-	<?php echo $this->fetch('scriptBottom'); ?>
+    <?php echo $this->fetch('dataTableSettings'); ?>
+	<?php echo $this->fetch('script'); ?>
 </body>
 </html>

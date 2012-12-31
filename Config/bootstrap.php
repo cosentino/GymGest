@@ -186,6 +186,7 @@ Inflector::rules('plural', array(
  */
 //CakePlugin::load('Search');
 //CakePlugin::load('TwitterBootstrap');
+//CakePlugin::load('DataTable');
 CakePlugin::loadAll();
  
 /**

@@ -1,9 +1,10 @@
 $(document).ready(function(){
     if ($.fn.dataTable) {
         
-        //$(".table.columnFiltered").dataTable().columnFilter();
+        // I use DataTable CakePHP Plugin instead...
 
-        
+        //$(".table.columnFiltered").dataTable().columnFilter();
+        /*
         $(".table").dataTable({
             sDom: "<'dt_header'<'row-fluid'<'span6'l><'span6'T>>r>t<'dt_footer'<'row-fluid'<'span6'i><'span6'p>>>",
             oTableTools: {
@@ -26,6 +27,7 @@ $(document).ready(function(){
                 }]
             }
         });
+        */
     
     }
 });

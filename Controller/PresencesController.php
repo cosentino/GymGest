@@ -7,14 +7,32 @@ App::uses('AppController', 'Controller');
  */
 class PresencesController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	            'created',
+	            'Person.name' => array('label' => 'Person'),
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Presence->recursive = 0;
-		$this->set('presences', $this->paginate());
+		//$this->Presence->recursive = 0;
+		//$this->set('presences', $this->paginate());
+		$this->DataTable->settings['Presence'] = array('fields' => array('id', 'created', 'modified', 'person_id'));
+		$this->DataTable->paginate = array('Presence');
 	}
 
 /**

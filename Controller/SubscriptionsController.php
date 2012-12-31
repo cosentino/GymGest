@@ -7,14 +7,36 @@ App::uses('AppController', 'Controller');
  */
 class SubscriptionsController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	        	'created',
+	            'Person.name' => array('label' => 'Person'),
+	            'SubscriptionType.name' => array('label' => 'SubscriptionType'),
+	            'prepaid_count' => array('label' => 'Prepaid'),
+	            'valid_from',
+	            'valid_to',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Subscription->recursive = 0;
-		$this->set('subscriptions', $this->paginate());
+		//$this->Subscription->recursive = 0;
+		//$this->set('subscriptions', $this->paginate());
+		$this->DataTable->settings['Subscription'] = array('fields' => 
+			array('id', 'created', 'person_id', 'subscription_type_id', 'prepaid_count', 'valid_from', 'valid_to' ));	            
+		$this->DataTable->paginate = array('Subscription');
 	}
 
 /**

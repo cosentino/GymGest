@@ -35,8 +35,9 @@ class AppController extends Controller {
 	public $helpers = array(
 		"Html", 
 		"Form", 
+    	"DataTable.DataTable",
 		"TB" => array(
         	"className" => "TwitterBootstrap.TwitterBootstrap"
-    	)
+    	),
 	);
 }
