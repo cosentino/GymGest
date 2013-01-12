@@ -7,14 +7,34 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	        	'id',
+	            'created',
+	            'modified',
+	            'username',
+	            'role',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->User->recursive = 0;
-		$this->set('users', $this->paginate());
+		//$this->User->recursive = 0;
+		//$this->set('users', $this->paginate());
+		$this->DataTable->settings['User'] = array('fields' => array('id', 'created', 'modified', 'username', 'role'));
+		$this->DataTable->paginate = array('User');
 	}
 
 /**

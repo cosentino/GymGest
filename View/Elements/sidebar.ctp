@@ -138,11 +138,11 @@
            			
             		<li><?php echo $this->Html->link(
 						'<i class="icol-zone"></i> ' . __('List Users'), 
-						array('controller' => 'course_prices', 'action' => 'index'), array('escape' => false)); ?></li>
+						array('controller' => 'users', 'action' => 'index'), array('escape' => false)); ?></li>
 
             		<li><?php echo $this->Html->link(
 						'<i class="icol-zone"></i> ' . __('New User'), 
-						array('controller' => 'course_prices', 'action' => 'add'), array('escape' => false)); ?></li>
+						array('controller' => 'users', 'action' => 'add'), array('escape' => false)); ?></li>
 			
 				</ul>
            	</li>

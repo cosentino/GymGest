@@ -7,14 +7,33 @@ App::uses('AppController', 'Controller');
  */
 class SubscriptionPricesController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	            'created',
+	            'MembershipType.name' => array('label' => 'Membership Type'),
+	            'SubscriptionType.name' => array('label' => 'Subscription Type'),
+	            'price',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->SubscriptionPrice->recursive = 0;
-		$this->set('subscriptionPrices', $this->paginate());
+		//$this->SubscriptionPrice->recursive = 0;
+		//$this->set('subscriptionPrices', $this->paginate());	
+		$this->DataTable->settings['SubscriptionPrice'] = array('fields' => array('id', 'created', 'membership_type_id', 'subscription_type_id', 'price'));
+		$this->DataTable->paginate = array('SubscriptionPrice');
 	}
 
 /**

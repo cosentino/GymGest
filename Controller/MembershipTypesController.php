@@ -7,14 +7,32 @@ App::uses('AppController', 'Controller');
  */
 class MembershipTypesController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(	        	
+	            'created',
+	            'name',
+	            'notes',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->MembershipType->recursive = 0;
-		$this->set('membershipTypes', $this->paginate());
+		//$this->MembershipType->recursive = 0;
+		//$this->set('membershipTypes', $this->paginate());
+		//$this->DataTable->settings['MembershipType'] = array('fields' => array('id', 'created', 'person_id'));
+		$this->DataTable->paginate = array('MembershipType');
 	}
 
 /**

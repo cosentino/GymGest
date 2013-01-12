@@ -7,14 +7,35 @@ App::uses('AppController', 'Controller');
  */
 class CoursePricesController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	        	'id',
+	            'created',
+	            'modified',
+	            'CourseType.name' => array('label' => 'Course Type'),
+	            'MembershipType.name' => array('label' => 'Membership Type'),
+	            'price',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->CoursePrice->recursive = 0;
-		$this->set('coursePrices', $this->paginate());
+		//$this->CoursePrice->recursive = 0;
+		//$this->set('coursePrices', $this->paginate());
+		$this->DataTable->settings['CoursePrice'] = array('fields' => array('id', 'created', 'modified', 'course_type_id', 'membership_type_id', 'price'));
+		$this->DataTable->paginate = array('CoursePrice');
 	}
 
 /**

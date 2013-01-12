@@ -1,48 +1,28 @@
-<div class="coursePrices index">
-	<h2><?php echo __('Course Prices'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th><?php echo $this->Paginator->sort('membership_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('course_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('price'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php
-	foreach ($coursePrices as $coursePrice): ?>
-	<tr>
-		<td><?php echo h($coursePrice['CoursePrice']['id']); ?>&nbsp;</td>
-		<td><?php echo h($coursePrice['CoursePrice']['created']); ?>&nbsp;</td>
-		<td><?php echo h($coursePrice['CoursePrice']['modified']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($coursePrice['MembershipType']['name'], array('controller' => 'membership_types', 'action' => 'view', $coursePrice['MembershipType']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($coursePrice['CourseType']['name'], array('controller' => 'course_types', 'action' => 'view', $coursePrice['CourseType']['id'])); ?>
-		</td>
-		<td><?php echo h($coursePrice['CoursePrice']['price']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $coursePrice['CoursePrice']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $coursePrice['CoursePrice']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $coursePrice['CoursePrice']['id']), null, __('Are you sure you want to delete # %s?', $coursePrice['CoursePrice']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
+<?php
 
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
+$this->start('pageTitle');
+echo __('Course Prices');
+$this->end();
+
+$this->start('pageSubtitle');
+echo __('The full list of course prices');
+$this->end();
+
+?>
+<div class="coursePrices index">
+
+	<div class="row-fluid">
+	    <div class="span12 widget">
+	        <div class="widget-header">
+	            <span class="title"><?php echo __('Course Prices'); ?></span>
+	        </div>
+	        <div class="widget-content table-container">
+	        	<?php
+	        		$this->DataTable->setLabel('CoursePrice', 6, __('Actions')); // Set the label of the 3rd column to "Actions"
+        			echo $this->DataTable->render('CoursePrice', array('class' => 'table table-striped dataTable')); 
+	        	?>
+			 </div><!-- widget-content -->
+        </div><!-- widget -->
+	</div><!--row-fluid-->
+	
+</div><!--context-->

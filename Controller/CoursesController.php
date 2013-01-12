@@ -7,14 +7,35 @@ App::uses('AppController', 'Controller');
  */
 class CoursesController extends AppController {
 
+	public $components = array(
+	        'DataTable.DataTable' => array(
+	        'columns' => array(
+	        	'id',	        	
+	            'created',
+	            'CourseType.name' => array('label' => 'Course Type'),
+	            'start_date',
+	            'end_date',
+	            'time_slot',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        ),
+	    )
+    );
+
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Course->recursive = 0;
-		$this->set('courses', $this->paginate());
+		//$this->Course->recursive = 0;
+		//$this->set('courses', $this->paginate());
+		$this->DataTable->settings['Course'] = array('fields' => array('id', 'created', 'course_type_id', 'start_date', 'end_date', 'time_slot'));
+		$this->DataTable->paginate = array('Course');
 	}
 
 /**

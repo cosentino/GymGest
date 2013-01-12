@@ -1,58 +1,28 @@
-<div class="memberships index">
-	<h2><?php echo __('Memberships'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
-			<th><?php echo $this->Paginator->sort('modified'); ?></th>
-			<th><?php echo $this->Paginator->sort('person_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('membership_type_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('valid_from'); ?></th>
-			<th><?php echo $this->Paginator->sort('valid_to'); ?></th>
-			<th><?php echo $this->Paginator->sort('id_number'); ?></th>
-			<th><?php echo $this->Paginator->sort('association'); ?></th>
-			<th><?php echo $this->Paginator->sort('role'); ?></th>
-			<th><?php echo $this->Paginator->sort('notes'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php
-	foreach ($memberships as $membership): ?>
-	<tr>
-		<td><?php echo h($membership['Membership']['id']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['created']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['modified']); ?>&nbsp;</td>
-		<td>
-			<?php echo $this->Html->link($membership['Person']['name'], array('controller' => 'people', 'action' => 'view', $membership['Person']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($membership['MembershipType']['name'], array('controller' => 'membership_types', 'action' => 'view', $membership['MembershipType']['id'])); ?>
-		</td>
-		<td><?php echo h($membership['Membership']['valid_from']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['valid_to']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['id_number']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['association']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['role']); ?>&nbsp;</td>
-		<td><?php echo h($membership['Membership']['notes']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $membership['Membership']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $membership['Membership']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $membership['Membership']['id']), null, __('Are you sure you want to delete # %s?', $membership['Membership']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
+<?php
 
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
+$this->start('pageTitle');
+echo __('Memberships');
+$this->end();
+
+$this->start('pageSubtitle');
+echo __('The full list of memberships');
+$this->end();
+
+?>
+<div class="memberships index">
+
+	<div class="row-fluid">
+	    <div class="span12 widget">
+	        <div class="widget-header">
+	            <span class="title"><?php echo __('Memberships'); ?></span>
+	        </div>
+	        <div class="widget-content table-container">
+	        	<?php
+	        		$this->DataTable->setLabel('Membership', 6, __('Actions')); // Set the label of the nth column to "Actions"
+        			echo $this->DataTable->render('Membership', array('class' => 'table table-striped dataTable')); 
+	        	?>
+			 </div><!-- widget-content -->
+        </div><!-- widget -->
+	</div><!--row-fluid-->
+	
 </div>
