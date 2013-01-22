@@ -1,23 +1,16 @@
+<?php
+
+$this->start('pageTitle');
+echo __('People');
+$this->end();
+
+$this->start('pageSubtitle');
+echo __('The full list of people');
+$this->end();
+
+?>
 <div class="people index">
-
-	<h2><?php echo __('People'); ?></h2>
-
-	<div class="actions">
-		<!-- SEARCH BOX -->
-		<?php 
-		echo $this->Form->create('Person', array(
-			'url' => array_merge(array('action' => 'index'), $this->params['pass'])
-		));
-		echo $this->Form->input('search', array('div' => false));
-		//echo $this->Form->input('title', array('div' => false));
-		//echo $this->Form->input('blog_id', array('div' => false, 'options' => $blogs));
-		//echo $this->Form->input('status', array('div' => false, 'multiple' => 'checkbox', 'options' => array('open', 'closed')));
-		//echo $this->Form->input('username', array('div' => false));
-		echo $this->Form->submit(__('Search'), array('div' => false));
-		echo $this->Form->end();
-		?>
-	</div>
-
+	
 	<div class="row-fluid">
 	    <div class="span12 widget">
 	        <div class="widget-header">

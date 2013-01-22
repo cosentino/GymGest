@@ -45,7 +45,7 @@ class MembershipType extends AppModel {
 		'CoursePrice' => array(
 			'className' => 'CoursePrice',
 			'foreignKey' => 'membership_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -58,7 +58,7 @@ class MembershipType extends AppModel {
 		'Membership' => array(
 			'className' => 'Membership',
 			'foreignKey' => 'membership_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -71,7 +71,7 @@ class MembershipType extends AppModel {
 		'SubscriptionPrice' => array(
 			'className' => 'SubscriptionPrice',
 			'foreignKey' => 'membership_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

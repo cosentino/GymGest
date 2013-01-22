@@ -44,7 +44,7 @@ class SubscriptionType extends AppModel {
 		'SubscriptionPrice' => array(
 			'className' => 'SubscriptionPrice',
 			'foreignKey' => 'subscription_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -57,7 +57,7 @@ class SubscriptionType extends AppModel {
 		'Subscription' => array(
 			'className' => 'Subscription',
 			'foreignKey' => 'subscription_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

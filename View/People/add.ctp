@@ -1,3 +1,14 @@
+<?php
+
+$this->start('pageTitle');
+echo __('Add Person');
+$this->end();
+
+$this->start('pageSubtitle');
+echo __('');
+$this->end();
+
+?>
 <div class="people form">
 	<div class="row-fluid">
     	<div class="span12">

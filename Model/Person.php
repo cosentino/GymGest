@@ -47,7 +47,7 @@ class Person extends AppModel {
 		'CourseRegistration' => array(
 			'className' => 'CourseRegistration',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -60,7 +60,7 @@ class Person extends AppModel {
 		'Membership' => array(
 			'className' => 'Membership',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -73,7 +73,7 @@ class Person extends AppModel {
 		'Presence' => array(
 			'className' => 'Presence',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -86,7 +86,7 @@ class Person extends AppModel {
 		'Subscription' => array(
 			'className' => 'Subscription',
 			'foreignKey' => 'person_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

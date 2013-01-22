@@ -10,7 +10,26 @@ class PeopleController extends AppController {
 /*
  *	Searchable implementation
  */	
-	public $components = array('Search.Prg');
+	public $components = array(
+		'Search.Prg',
+    	'DataTable.DataTable' => array(
+	        'columns' => array(
+	        	'created',
+	            'Person.name' => array('label' => 'Person'),
+	            'MembershipType.name' => array('label' => 'MembershipType'),
+	            'valid_from',
+	            'valid_to',
+	            'id_number' => array('label' => 'Id Number'),
+	            'association',
+	            'actions' => array(
+	            	'bSortable' => false,
+	            	'bSearchable' => false,
+	            	'class' => 'actions',
+	            	'useField' => null
+            	)
+	        )
+	    )
+	);
 	public $paginate = array();
     public $presetVars = true; // using the model configuration
 
@@ -20,7 +39,7 @@ class PeopleController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Prg->commonProcess();		
+		$this->Prg->commonProcess();
         $this->paginate['conditions'] = $this->Person->parseCriteria($this->passedArgs);
 		$this->set('people', $this->paginate());
 	}
@@ -77,6 +96,7 @@ class PeopleController extends AppController {
 				$this->Session->setFlash(__('The person could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
+            $this->Person->recursive = 2;
 			$this->request->data = $this->Person->read(null, $id);
 		}
 	}

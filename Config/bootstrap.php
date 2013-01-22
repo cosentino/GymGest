@@ -184,10 +184,11 @@ Inflector::rules('plural', array(
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
-//CakePlugin::load('Search');
-//CakePlugin::load('TwitterBootstrap');
-//CakePlugin::load('DataTable');
-CakePlugin::loadAll();
+//CakePlugin::loadAll();
+CakePlugin::load('Search');
+CakePlugin::load('TwitterBootstrap');
+CakePlugin::load('DataTable');
+CakePlugin::load('DebugKit');
  
 /**
  * You can attach event listeners to the request lifecyle as Dispatcher Filter . By Default CakePHP bundles two filters:

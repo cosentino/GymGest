@@ -92,10 +92,28 @@
 							<span id="search-toggle" data-toggle="dropdown">
 								<i class="icon-search"></i>
 							</span>
-							<form class="navbar-search">
-								<input type="text" class="search-query" placeholder="Search">
+							<!-- SEARCH BOX -->
+							<?php 
+								echo $this->Form->create('Person', array(
+										'url' => array_merge(array('action' => 'index'), $this->params['pass']),
+										'class' => 'navbar-search'
+									)
+								);
+								echo $this->Form->input('search', array(
+									'div' => false,
+									'label' => false,
+									'class' => 'search-query',
+									'placeholder' => __('Search')
+								));
+								echo $this->Form->submit(__('Search'), array(
+									'div' => false,
+									'class' => 'btn btn-inverse'
+								));							
+								echo $this->Form->end();
+							?>
 							</form>
 						</div>
+						<!--
 						<div id="dropdown-lists">
 							<a class="item" href="#">
 								<span class="item-icon"><i class="icon-exclamation-sign"></i></span>
@@ -131,6 +149,7 @@
                             	<a href="index.html"><i class="icon-off"></i></a>
                             </div>
                         </div>
+                    	-->
                     </div>
                 </div>
             </div>
@@ -196,11 +215,11 @@
 				);
 			?-->
 
-        </footer>        
+        </footer>
     </div>
 
-
-	<?php echo $this->element('sql_dump'); ?>
+	<!-- Debug (default CakePHP baked) -->    
+	<!--?php echo $this->element('sql_dump'); ?-->
 
     <!-- Core Scripts -->
     <script src="<?php echo $this->base; ?>/assets/js/libs/jquery-1.8.2.min.js"></script>

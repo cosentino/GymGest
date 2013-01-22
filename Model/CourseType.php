@@ -44,7 +44,7 @@ class CourseType extends AppModel {
 		'CoursePrice' => array(
 			'className' => 'CoursePrice',
 			'foreignKey' => 'course_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -57,7 +57,7 @@ class CourseType extends AppModel {
 		'Course' => array(
 			'className' => 'Course',
 			'foreignKey' => 'course_type_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',

@@ -60,7 +60,7 @@ class Course extends AppModel {
 		'CourseRegistration' => array(
 			'className' => 'CourseRegistration',
 			'foreignKey' => 'course_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
