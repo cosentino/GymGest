@@ -89,6 +89,7 @@ class SubscriptionTypesController extends AppController {
 				$this->Session->setFlash(__('The subscription type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
+            $this->SubscriptionType->recursive = 2;
 			$this->request->data = $this->SubscriptionType->read(null, $id);
 		}
 	}

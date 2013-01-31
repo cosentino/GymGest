@@ -33,15 +33,15 @@
 
 					<li><?php echo $this->Html->link(
 						'<i class="icol-traffic"></i> ' . __('New Subscription Type'), 
-						array('controller' => 'subscription_types', 'add' => 'index'), array('escape' => false)); ?> </li>
+						array('controller' => 'subscription_types', 'action' => 'add'), array('escape' => false)); ?> </li>
 
 					<li><?php echo $this->Html->link(
 						'<i class="icol-traffic"></i> ' . __('List Subscription Price'), 
-						array('controller' => 'subscription_prices', 'add' => 'index'), array('escape' => false)); ?> </li>
+						array('controller' => 'subscription_prices', 'action' => 'index'), array('escape' => false)); ?> </li>
 
 					<li><?php echo $this->Html->link(
 						'<i class="icol-traffic"></i> ' . __('New Subscription Price'), 
-						array('controller' => 'subscription_prices', 'add' => 'add'), array('escape' => false)); ?> </li>
+						array('controller' => 'subscription_prices', 'action' => 'add'), array('escape' => false)); ?> </li>
 		                                        
                 </ul>
             </li>

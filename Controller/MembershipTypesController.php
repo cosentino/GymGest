@@ -87,6 +87,7 @@ class MembershipTypesController extends AppController {
 				$this->Session->setFlash(__('The membership type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
+            $this->MembershipType->recursive = 2;
 			$this->request->data = $this->MembershipType->read(null, $id);
 		}
 	}

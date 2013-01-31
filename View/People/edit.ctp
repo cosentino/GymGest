@@ -9,7 +9,7 @@ echo __('');
 $this->end();
 
 ?>
-<div class="people form">
+<div class="form">
 	<div class="row-fluid">
     	<div class="span12">					
             <div class="widget">
@@ -24,21 +24,6 @@ $this->end();
                             <li><a href="#tab-04" data-toggle="tab">Presences</a></li>
                             <li><a href="#tab-05" data-toggle="tab">Courses</a></li>
                         </ul>
-						<!--div class="btn-group">
-							<?php echo $this->Form->postLink(
-								'<i class="icon-trash"></i>',
-								array(
-									'action' => 'delete',
-									$this->Form->value('Person.id')
-								),
-								array(
-									'class' => 'btn',									
-									'title' => __('Delete'),
-									'escape' => false
-								), 
-								__('Are you sure you want to delete # %s?', $this->Form->value('Person.id')
-							)); ?>						
-						</div-->
 					</div>
                 </div><!-- widget-header -->
 
@@ -95,14 +80,22 @@ $this->end();
 							echo $this->Form->input('email');
 							echo $this->Form->input('birthdate', array('class' => 'span4'));
 							echo $this->Form->input('notes');
-							
-							echo $this->Form->end(array(
-								'label' => __('Submit'),
-								'div' => array('class' => 'form-actions'),
-								'class' => 'btn btn-primary'
-							)); 
-
 						?>
+                        <div class="form-actions btn-toolbar">
+                            <?php
+                            echo $this->Form->end(array(
+                                'label' => __('Submit'),
+                                'div' => false,
+                                'class' => 'btn btn-primary'
+                            ));
+                            echo $this->Form->postLink(
+                                __('Delete'),
+                                array('action' => 'delete', $this->Form->value('Person.id')),
+                                array('class' => 'btn btn-danger'),
+                                __('Are you sure you want to delete # %s?', $this->Form->value('Person.id'))
+                            );
+                            ?>
+                        </div>
 					</div><!-- tab-01: Personal Data -->
 
                     <!-- Membership -->
@@ -161,13 +154,13 @@ $this->end();
                                         __('New Membership'),
                                         array('controller' => 'memberships', 'action' => 'add'),
                                         array('class' => 'btn btn-success')
-                                    );
-                                    ?></li>
+                                    ); ?></li>
 								</ul>
 							</div>
 						</div><!-- widget-content -->												
 					</div><!-- tab-02: Membership -->
 
+                    <!-- Subscription -->
 					<div class="tab-pane" id="tab-03">
                         <div class="widget-content table-container">
                             <?php if (!empty($this->data['Subscription'])): ?>

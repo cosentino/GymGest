@@ -9,7 +9,7 @@ echo __('');
 $this->end();
 
 ?>
-<div class="people form">
+<div class="form">
 	<div class="row-fluid">
     	<div class="span12">
             <div class="widget">

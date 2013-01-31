@@ -35,7 +35,7 @@ class SubscriptionsController extends AppController {
 		//$this->Subscription->recursive = 0;
 		//$this->set('subscriptions', $this->paginate());
 		$this->DataTable->settings['Subscription'] = array('fields' => 
-			array('id', 'created', 'person_id', 'subscription_type_id', 'prepaid_count', 'valid_from', 'valid_to' ));	            
+			array('id', 'created', 'person_id', 'subscription_type_id', 'prepaid_count', 'valid_from', 'valid_to'));
 		$this->DataTable->paginate = array('Subscription');
 	}
 
