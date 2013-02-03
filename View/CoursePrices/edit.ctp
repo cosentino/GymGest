@@ -1,19 +1,60 @@
-<div class="coursePrices form">
-<?php echo $this->Form->create('CoursePrice'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Course Price'); ?></legend>
-	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('membership_type_id');
-		echo $this->Form->input('course_type_id');
-		echo $this->Form->input('price');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('CoursePrice.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('CoursePrice.id'))); ?></li>		
-	</ul>
+<?php
+
+$this->start('pageTitle');
+echo __('Edit CoursePrice');
+$this->end();
+
+$this->start('pageSubtitle');
+echo __('');
+$this->end();
+
+?>
+<div class="form">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget">
+                <div class="widget-header">
+                    <span class="title"><?php echo __('Edit CoursePrice'); ?></span>
+                </div>
+                <div class="widget-content form-container">
+                    <?php
+
+                    echo $this->Form->create('CoursePrice', array(
+                        'class' => 'form-horizontal',
+                        'inputDefaults' => array(
+                            'div' => 'control-group',
+                            'label' => array('class' => 'control-label'),
+                            'between' => '<div class="controls">',
+                            'after' => '</div>',
+                            'class' => 'span12'
+                        )
+                    ));
+
+                    echo $this->Form->input('id');
+                    echo $this->Form->input('membership_type_id');
+                    echo $this->Form->input('course_type_id');
+                    echo $this->Form->input('price');
+
+                    ?>
+                    <div class="form-actions btn-toolbar">
+                        <?php
+                        echo $this->Form->end(array(
+                            'label' => __('Submit'),
+                            'div' => false,
+                            'class' => 'btn btn-primary'
+                        ));
+                        echo $this->Form->postLink(
+                            __('Delete'),
+                            array('action' => 'delete', $this->Form->value('CoursePrice.id')),
+                            array('class' => 'btn btn-danger'),
+                            __('Are you sure you want to delete # %s?', $this->Form->value('CoursePrice.id'))
+                        );
+
+                        ?>
+                    </div>
+                </div><!-- widget-content -->
+
+            </div><!-- widget -->
+        </div>
+    </div>
 </div>

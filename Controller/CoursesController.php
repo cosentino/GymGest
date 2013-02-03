@@ -94,6 +94,7 @@ class CoursesController extends AppController {
 		} else {
 			$this->request->data = $this->Course->read(null, $id);
 		}
+        $this->Course->recursive = 3;
 		$courseTypes = $this->Course->CourseType->find('list');
 		$this->set(compact('courseTypes'));
 	}

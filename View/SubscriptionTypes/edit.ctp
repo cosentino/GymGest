@@ -18,8 +18,8 @@ $this->end();
                     <span class="title"><?php echo __('Subscription Type'); ?></span>
                     <div class="toolbar">
                         <ul class="nav nav-pills">
-                            <li class="active"><a href="#tab-01" data-toggle="tab">Details</a></li>
-                            <li><a href="#tab-02" data-toggle="tab">Prices</a></li>
+                            <li class="active"><a href="#tab-01" data-toggle="tab"><?php echo __('Details'); ?></a></li>
+                            <li><a href="#tab-02" data-toggle="tab"><?php echo __('Prices'); ?></a></li>
                         </ul>
                     </div>
                 </div><!-- widget-header -->

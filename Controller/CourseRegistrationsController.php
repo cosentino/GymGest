@@ -13,7 +13,7 @@ class CourseRegistrationsController extends AppController {
 	            'created',
 	            'modified',
 	            'Person.name' => array('label' => 'Person'),
-	            'Course.name' => array('label' => 'Course'),
+	            'Course.start_date' => array('label' => 'Course'),
 	            'paid',
 	            'actions' => array(
 	            	'bSortable' => false,

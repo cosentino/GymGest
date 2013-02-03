@@ -88,6 +88,7 @@ class CourseTypesController extends AppController {
 				$this->Session->setFlash(__('The course type could not be saved. Please, try again.'),"default",array(),"error");
 			}
 		} else {
+            $this->CourseType->recursive = 2;
 			$this->request->data = $this->CourseType->read(null, $id);
 		}
 	}

@@ -261,7 +261,7 @@ $this->end();
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th><?php echo __('Created'); ?></th>
+                                    <th><?php echo __('Registration date'); ?></th>
                                     <th><?php echo __('Course'); ?></th>
                                     <th><?php echo __('Paid'); ?></th>
                                     <th class="actions"><?php echo __('Actions'); ?></th>
@@ -269,15 +269,24 @@ $this->end();
                                 </thead>
                                 <tbody>
                                 <?php
+
+                                    //I need to call the find() function on a Model which is not on the default controller of this View.
+                                    //Thus i have to:
+                                    // 1. import and instantiate the controller I need
+                                    // 2. call the find function on the model of the controller I explicetely just loaded
+                                    App::import('Controller', 'CourseTypes');
+                                    $CourseTypesController = new CourseTypesController;
+                                    //$CourseTypesController->loadModel('CourseType');
+
                                     $i = 0;
                                     foreach ($this->data['CourseRegistration'] as $courseRegistration):
                                 ?>
 								<tr>
 									<td><?php echo $courseRegistration['created']; ?></td>
-									<td><?php echo $courseRegistration['course_id']; ?></td>
                                     <td><?php
+                                        $courseType = $CourseTypesController->CourseType->find('first', array('id' => $courseRegistration['Course']['course_type_id']));
                                         echo $this->Html->link(
-                                            $courseRegistration['Course']['name'],
+                                            $courseType['CourseType']['name'] . ' (' . $courseRegistration['Course']['start_date'] . ' / ' . $courseRegistration['Course']['time_slot'] . ')' ,
                                             array('controller' => 'course', 'action' => 'edit', $courseRegistration['course_id'])
                                         );
                                     ?></td>
