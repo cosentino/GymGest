@@ -17,10 +17,21 @@ foreach($dtResults as $result) {
         $courseType['CourseType']['name'] . ' (' . $result['Course']['start_date'] . ')' ,
         array('controller' => 'courses', 'action' => 'view', $result['CourseRegistration']['course_id']));
 
-	$td_action = ' ' . $this->Html->link(__('View'), array('action' => 'view', $result['CourseRegistration']['id']));
-	$td_action .= ' ' . $this->Html->link(__('Edit'), array('action' => 'edit', $result['CourseRegistration']['id']));
-	$td_action .= ' ' . $this->Form->postLink(__('Delete'), array('action' => 'delete', $result['CourseRegistration']['id']), null, __('Are you sure you want to delete # %s?', $result['CourseRegistration']['id']));
-	
+    $td_action = '<span class="btn-group">';
+    //$td_action .= ' ' . $this->Html->link(__('View'), array('action' => 'view', $result['CourseRegistration']['id']));
+    $td_action .= ' ' . $this->Html->link(
+        '<i class="icon-pencil"></i>',
+        array('action' => 'edit', $result['CourseRegistration']['id']),
+        array('class' => 'btn btn-small', 'title' => __('Edit'), 'escape' => false)
+    );
+    $td_action .= ' ' . $this->Form->postLink(
+        '<i class="icon-trash"></i>',
+        array('action' => 'delete', $result['CourseRegistration']['id']),
+        array('class' => 'btn btn-small', 'title' => __('Delete'), 'escape' => false),
+        __('Are you sure you want to delete # %s?', $result['CourseRegistration']['id'])
+    );
+    $td_action .= '</span>';
+
     $this->dtResponse['aaData'][] = array(
         $result['CourseRegistration']['created'],
         $result['CourseRegistration']['modified'],

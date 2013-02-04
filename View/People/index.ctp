@@ -72,7 +72,7 @@ $this->end();
 							<td><?php echo h($person['Person']['notes']); ?>&nbsp;</td>
 						-->
 							<td class="actions">
-								<?php echo $this->Html->link(__('View'), array('action' => 'view', $person['Person']['id'])); ?>
+								<?php /*echo $this->Html->link(__('View'), array('action' => 'view', $person['Person']['id'])); */?>
 								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $person['Person']['id'])); ?>
 								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $person['Person']['id']), null, __('Are you sure you want to delete # %s?', $person['Person']['id'])); ?>
 							</td>
