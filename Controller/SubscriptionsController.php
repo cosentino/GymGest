@@ -11,8 +11,8 @@ class SubscriptionsController extends AppController {
 	        'DataTable.DataTable' => array(
 	        'columns' => array(
 	        	'created',
-	            'Person.name' => array('label' => 'Person'),
-	            'SubscriptionType.name' => array('label' => 'SubscriptionType'),
+	            'Person.name, Person.surname' => array('label' => 'Person'),
+	            'SubscriptionType.name' => array('label' => 'Subscription Type'),
 	            'prepaid_count' => array('label' => 'Prepaid'),
 	            'valid_from',
 	            'valid_to',

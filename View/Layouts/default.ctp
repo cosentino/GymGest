@@ -61,6 +61,8 @@
 	<link rel="stylesheet" href="<?php echo $this->base; ?>/assets/css/mooncake.min.css" media="screen">
 	<link rel="stylesheet" href="<?php echo $this->base; ?>/assets/css/plugins/plugins.min.css" media="screen">
 
+    <link rel="stylesheet" href="<?php echo $this->base; ?>/assets/css/custom.css" media="screen">
+
 	<?php echo $this->fetch('css'); ?>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->

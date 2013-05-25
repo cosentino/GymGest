@@ -2,7 +2,10 @@
 
 foreach($dtResults as $result) {
 
-	$td_person = ' ' . $this->Html->link($result['Person']['name'], array('controller' => 'people', 'action' => 'view', $result['Presence']['person_id']));
+	$td_person = ' ' . $this->Html->link(
+        $result['Person']['name'] . ' ' . $result['Person']['surname'],
+        array('controller' => 'people', 'action' => 'view', $result['Presence']['person_id'])
+    );
 
     $td_action = '<span class="btn-group">';
     //$td_action .= ' ' . $this->Html->link(__('View'), array('action' => 'view', $result['Presence']['id']));

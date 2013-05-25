@@ -2,7 +2,7 @@
 
 foreach($dtResults as $result) {
 
-	$td_person = ' ' . $this->Html->link($result['Person']['name'], array('controller' => 'people', 'action' => 'view', $result['Subscription']['person_id']));
+	$td_person = ' ' . $this->Html->link($result['Person']['name'] . ' ' . $result['Person']['surname'], array('controller' => 'people', 'action' => 'view', $result['Subscription']['person_id']));
 
 	$td_membership_type = ' ' . $this->Html->link($result['MembershipType']['name'], array('controller' => 'membership_type', 'action' => 'view', $result['Membership']['membership_type_id']));
 

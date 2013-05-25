@@ -1,0 +1,557 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"li",
+				"list-style-position"
+			],
+			[
+				"CourseT",
+				"CourseTypes"
+			],
+			[
+				"Mem",
+				"MembershipType"
+			],
+			[
+				"Member",
+				"membership"
+			],
+			[
+				"member",
+				"memberships"
+			],
+			[
+				"membersh",
+				"membership_types"
+			],
+			[
+				"Subsc",
+				"SubscriptionPrice"
+			],
+			[
+				"subsc",
+				"subscription_type"
+			],
+			[
+				"Subs",
+				"SubscriptionType"
+			],
+			[
+				"subs",
+				"subscription"
+			],
+			[
+				"Subsci",
+				"SubscriptionType"
+			],
+			[
+				"Subscr",
+				"Subscription"
+			],
+			[
+				"su",
+				"subscription_id"
+			],
+			[
+				"Membe",
+				"Membership"
+			],
+			[
+				"members",
+				"membership"
+			],
+			[
+				"vali",
+				"valid_subscription"
+			],
+			[
+				"Sub",
+				"SubscriptionType"
+			],
+			[
+				"Su",
+				"SubscriptionType"
+			],
+			[
+				"Subt",
+				"Subscriptions"
+			],
+			[
+				"plu",
+				"plural"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"HTML",
+				"Set Syntax: HTML"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"document",
+				"Goto Documentation"
+			],
+			[
+				"docume",
+				"Goto Documentation"
+			],
+			[
+				"PHP",
+				"Set Syntax: PHP"
+			],
+			[
+				"Docu",
+				"Set Syntax: Rd (R Documentation)"
+			],
+			[
+				"docum",
+				"Set Syntax: Rd (R Documentation)"
+			],
+			[
+				"Synta PH",
+				"Set Syntax: PHP"
+			],
+			[
+				"console",
+				"Set Syntax: R Console"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 225.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Marcello/Downloads/077b9698d3d55a0bd09c.js",
+		"/C/Users/Marcello/AppData/Local/Temp/Temp1_Mageno-WinCache-extracted-from-Zf-1.11.11 (1).zip/lib/Zend/Cache/Backend/WinCache.php",
+		"/C/Users/Marcello/AppData/Local/Temp/Temp1_Mageno-WinCache-extracted-from-Zf-1.11.11.zip/lib/Zend/Cache/Backend/WinCache.php",
+		"/D/Lavoro/Clienti/CosentinoShop/doorpage/index.html",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/tables.html",
+		"/C/xampp/htdocs/gestionale/gestionale.sublime-project",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/View/Helper/DataTableHelper.php",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/Controller/Component/DataTableComponent.php",
+		"/C/xampp/htdocs/gestionale/View/People/datatable/edit.ctp",
+		"/C/xampp/htdocs/gestionale/View/People/edit.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/PeopleController.php",
+		"/C/xampp/apache/logs/error.log",
+		"/C/xampp/htdocs/phpinfo.php",
+		"/C/xampp/htdocs/gestionale/phpinfo.php",
+		"/C/Users/Marcello/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Marcello/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Marcello/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/xampp/htdocs/gestionale/View/Memberships/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/Memberships/datatable/edit.ctp",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/View/DataTableResponseView.php",
+		"/C/xampp/htdocs/gestionale/View/Memberships/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/MembershipsController.php",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/Controller/DataTableAppController.php",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/Model/DataTableAppModel.php",
+		"/C/xampp/htdocs/gestionale/View/People/index.ctp",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/ui_bootstrap.html",
+		"/C/xampp/htdocs/gestionale/View/People/view.ctp",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/form_wizard.html",
+		"/C/xampp/htdocs/gestionale/View/People/add.ctp",
+		"/C/xampp/htdocs/gestionale/Config/bootstrap.php",
+		"/C/xampp/htdocs/gestionale/View/Layouts/default.ctp",
+		"/C/xampp/htdocs/gestionale/View/Presences/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/AppController.php",
+		"/C/xampp/htdocs/gestionale/Model/Presence.php",
+		"/C/xampp/htdocs/gestionale/Model/Membership.php",
+		"/C/xampp/htdocs/gestionale/Model/CourseType.php",
+		"/C/xampp/htdocs/gestionale/Model/CourseRegistration.php",
+		"/C/xampp/htdocs/gestionale/Model/CoursePrice.php",
+		"/C/xampp/htdocs/gestionale/Model/Course.php",
+		"/C/xampp/htdocs/gestionale/Model/SubscriptionPrice.php",
+		"/C/xampp/htdocs/gestionale/Model/SubscriptionType.php",
+		"/C/xampp/htdocs/gestionale/Model/Subscription.php",
+		"/C/xampp/htdocs/gestionale/Model/Person.php",
+		"/C/xampp/htdocs/gestionale/Model/MembershipType.php",
+		"/C/xampp/htdocs/gestionale/View/Elements/sidebar.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/SubscriptionsController.php",
+		"/C/xampp/htdocs/gestionale/View/Helper/AppHelper.php",
+		"/C/Users/Marcello/Documents/Backup/Samsung Galaxy GT-I9003/SMSBackupRestore/sms-20130115231822.xml",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/form_elements.html",
+		"/C/xampp/htdocs/gestionale_v0.1/Controller/PresenzeController.php",
+		"/C/Users/Marcello/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/gestionale/View/CoursePrices/add.ctp",
+		"/C/xampp/htdocs/gestionale/View/Users/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/Presences/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/PresencesController.php",
+		"/C/xampp/htdocs/gestionale/Controller/UsersController.php",
+		"/C/xampp/htdocs/gestionale/View/Users/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/CoursePrices/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/CoursePrices/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/CoursePricesController.php",
+		"/C/xampp/htdocs/gestionale/Controller/CourseTypesController.php",
+		"/C/xampp/htdocs/gestionale/View/CourseTypes/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/CourseTypes/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/CourseRegistrations/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/CourseRegistrations/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/CourseRegistrationsController.php",
+		"/C/xampp/htdocs/gestionale/View/Courses/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/CoursesController.php",
+		"/C/xampp/htdocs/gestionale/View/Courses/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/MembershipTypesController.php",
+		"/C/xampp/htdocs/gestionale/View/MembershipTypes/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/MembershipTypes/index.ctp",
+		"/C/Users/Marcello/Downloads/Sql414430_1_sottovocesirolo.it_2013_01_03.sql",
+		"/C/Users/Marcello/Downloads/Sql407985_1_maresirolo.it_2013_01_03.sql",
+		"/C/xampp/htdocs/gestionale/View/Subscriptions/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/Subscriptions/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/SubscriptionPricesController.php",
+		"/C/xampp/htdocs/gestionale/View/SubscriptionPrices/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/SubscriptionPrices/index.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/SubscriptionTypesController.php",
+		"/C/xampp/htdocs/gestionale/View/SubscriptionTypes/index.ctp",
+		"/C/xampp/htdocs/gestionale/View/SubscriptionTypes/datatable/index.ctp",
+		"/C/xampp/htdocs/gestionale/s1v3fcxc.xbn.txt",
+		"/C/xampp/htdocs/gestionale/View/Elements/Title.ctp",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/Test/Case/Controller/Component/DataTableComponentTest.php",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/Test/Case/AllTestsTest.php",
+		"/C/xampp/htdocs/gestionale/webroot/assets/js/common.js",
+		"/C/xampp/htdocs/gestionale/.gitmodules",
+		"/C/xampp/htdocs/gestionale/.gitattributes",
+		"/C/xampp/htdocs/gestionale/.gitignore",
+		"/C/xampp/htdocs/gestionale/Plugin/DataTable/.git",
+		"/C/xampp/htdocs/gestionale/Config/core.php",
+		"/C/xampp/htdocs/gestionale/Config/database.php",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/data_tables.html",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/contacts.html",
+		"/C/xampp/htdocs/gestionale/webroot/plugins/datatables/dataTables.bootstrap.js",
+		"/C/xampp/htdocs/gestionale/webroot/bootstrap/js/bootstrap.min.js",
+		"/C/xampp/htdocs/gestionale/webroot/plugins/datatables/jquery.dataTables.columnFilter.js",
+		"/C/xampp/htdocs/gestionale/webroot/plugins/datatables/jquery.dataTables.min.js",
+		"/C/xampp/htdocs/gestionale/webroot/assets/js/template.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/assets/js/common.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/assets/js/demo/dataTables.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/assets/js/setup.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/assets/js/template.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/assets/js/customizer.js",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/dashboard.html",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/alerts.html",
+		"/C/xampp/htdocs/gestionale/View/SubscriptionPrices/edit.ctp",
+		"/C/xampp/htdocs/gestionale/Controller/PagesController.php",
+		"/C/xampp/htdocs/gestionale/View/Elements/flash.ctp",
+		"/C/xampp/htdocs/gestionale/View/Layouts/flash.ctp",
+		"/C/xampp/htdocs/gestionale/Model/AppModel.php",
+		"/C/xampp/htdocs/gestionale/View/Layouts/js/default.ctp",
+		"/C/xampp/htdocs/gestionale/index.php",
+		"/C/xampp/htdocs/gestionale/webroot/css/cake.generic.css",
+		"/C/xampp/htdocs/gestionale/View/Layouts/error.ctp",
+		"/C/xampp/htdocs/gestionale/View/Layouts/ajax.ctp",
+		"/D/Lavoro/Materiale/Admin Template/mooncake/index.html",
+		"/C/xampp/htdocs/gestionale/View/Emails/html/default.ctp",
+		"/C/xampp/htdocs/gestionale/View/Emails/text/default.ctp",
+		"/C/xampp/htdocs/gestionale/View/Layouts/xml/default.ctp",
+		"/D/Lavoro/Materiale/Admin Template/organon/js/navigation.js",
+		"/D/Lavoro/Materiale/Admin Template/organon/js/plugins/jGrowl/jquery.jgrowl.js",
+		"/D/Lavoro/Materiale/Admin Template/organon/js/bootstrap/bootstrap.js",
+		"/C/xampp/htdocs/gestionale/View/Subscriptions/add.ctp",
+		"/C/xampp/htdocs/gestionale/View/Subscriptions/view.ctp",
+		"/C/xampp/htdocs/gestionale/View/Presences/add_to_person.ctp",
+		"/C/xampp/htdocs/gestionale/View/Presences/add.ctp"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\xampp\\htdocs\\gestionale\\Controller",
+			"<open folders>",
+			"<open folders>,<open files>",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\n",
+			"Basic Table",
+			"unable to stat",
+			"Membership",
+			"`",
+			"ctrl+'",
+			"'",
+			"comment",
+			"render",
+			"Helper",
+			"_search",
+			"ajax",
+			"DataTable",
+			"datatable",
+			"_defaults",
+			"settings",
+			"getDefaults",
+			"_getObject",
+			"_parseSettings",
+			"settings",
+			"Tab Wid",
+			"$person",
+			"data",
+			"person",
+			"pass",
+			"sql_dump",
+			"ctrl+.",
+			"ctrl+c",
+			"comment",
+			"Presence",
+			"Person",
+			"Presence",
+			"subscription_days",
+			"6",
+			"assets",
+			"setLabel",
+			"_",
+			"__",
+			"useField",
+			"null",
+			"class",
+			"paginat",
+			"paginate ",
+			"paginate",
+			"pagina",
+			"Paginat",
+			"Paginator",
+			" class=\"active\"",
+			"Presences",
+			"jquery.ui",
+			"jquery.ui.base.css",
+			"demo-dtable-01",
+			"dtable-02",
+			"demo-dtable-02",
+			"records per page",
+			"Search",
+			"records ",
+			"records per ",
+			"record per",
+			"The person has been saved",
+			"help",
+			"helper",
+			"plugin",
+			"setFlash",
+			"bootstrap",
+			"msgbox",
+			"src=\"",
+			"fetch",
+			"title_for_layout",
+			"description",
+			"valid_subscription_types",
+			"subscription_type",
+			"$subscription_type",
+			"person_id",
+			"$person_id",
+			"$person_id\n",
+			"defaults",
+			"$defaults",
+			"incrementPrepaidPresences",
+			"incrementPrepaidPresence",
+			"incrementPrepaidPresences",
+			"getVali",
+			"getValidSu",
+			"$valid_subscriptions = $Subscriptions->getValidSubscriptions($person['Person']['id']);\n							if ($valid_subscriptions) {\n								$valid_subscription = current($valid_subscriptions);",
+			"getValidSu",
+			"getValidSubscriptions",
+			"getValidSubscription",
+			"getValidSubscriptions",
+			"incrementPrepaidPresences",
+			"incrementPrepaidPresences\n",
+			"getValidSubscription",
+			"par_person_id",
+			"incrementPrepaidPresences",
+			"getValidSubscription",
+			"getValidSubscriptiongetValidSubscription",
+			"getValidSubscription",
+			"subscr",
+			"presen",
+			"register_sidebar",
+			"nav_",
+			"register_nav_menus",
+			"nav",
+			"menu",
+			"nav",
+			"nav_",
+			"menu",
+			"body",
+			"<a>",
+			"</a>",
+			"choose",
+			"displayField",
+			"ingressi_prepagati",
+			"utente",
+			"Utente",
+			"incremen",
+			"ingrement",
+			"NotFoundException",
+			"Utente",
+			"preson",
+			"Abbonamento",
+			"Utente",
+			"Utenti",
+			"utenti",
+			"utente",
+			"Abbonamento",
+			"utente",
+			"AbbonamentoAttivo",
+			"Abbonamento"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"</li>\\n<li>",
+			"$this->data",
+			"$request->data",
+			"User",
+			"CoursePrice",
+			"CourseType",
+			"CourseRegistration",
+			"Course",
+			"MembershipType",
+			"<?php echo $this->base; ?>/assets",
+			"",
+			"src=\"",
+			"src=\"/",
+			"valid_subscriptions",
+			"<h4>",
+			"</h4>",
+			"prepaid_presences",
+			"person",
+			"Person",
+			"Subscription",
+			"person",
+			"ValidSubscription",
+			"Subscription",
+			"Person",
+			"valid_subscription",
+			"person",
+			"",
+			"people",
+			"valid_subscription",
+			"",
+			"; ?><br /> ",
+			"<?php echo ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.xdebug_execute":
+	{
+		"height": 100.0
+	},
+	"output.xdebug_inspect":
+	{
+		"height": 116.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sublime",
+				"/C/Users/Marcello/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap"
+			],
+			[
+				"",
+				"gestionale/Controller/PeopleController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true
+}

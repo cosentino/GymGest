@@ -8,10 +8,9 @@ App::import('Controller', 'CourseTypes');
 $CourseTypesController = new CourseTypesController;
 
 foreach($dtResults as $result) {
-    $course =
     $courseType = $CourseTypesController->CourseType->find('first', array('id' => $result['Course']['course_type_id']));
 
-	$td_person = ' ' . $this->Html->link($result['Person']['name'], array('controller' => 'people', 'action' => 'view', $result['CourseRegistration']['person_id']));
+	$td_person = ' ' . $this->Html->link($result['Person']['name'] . ' ' . $result['Person']['surname'], array('controller' => 'people', 'action' => 'view', $result['CourseRegistration']['person_id']));
 
 	$td_course = ' ' . $this->Html->link(
         $courseType['CourseType']['name'] . ' (' . $result['Course']['start_date'] . ')' ,

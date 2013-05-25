@@ -11,7 +11,7 @@ class PresencesController extends AppController {
 	        'DataTable.DataTable' => array(
 	        'columns' => array(
 	            'created',
-	            'Person.name' => array('label' => 'Person'),
+	            'Person.name, Person.surname' => array('label' => 'Person'),
 	            'actions' => array(
 	            	'bSortable' => false,
 	            	'bSearchable' => false,

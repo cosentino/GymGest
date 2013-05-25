@@ -1,0 +1,13 @@
+.people.index .table-striped tbody tr:nth-child(odd) td {
+    background-color: transparent;
+}
+
+.people.index .table-striped tbody tr:nth-child(2n+1) td {
+    border-top:solid 2px #bbb;
+}
+.people.index .table-striped tbody tr:nth-child(4n+1) td {
+    background-color: #f9f9f9;
+}
+.people.index .table-striped tbody tr:nth-child(4n+2) td {
+    background-color: #f9f9f9;
+}

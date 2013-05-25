@@ -12,7 +12,7 @@ class CourseRegistrationsController extends AppController {
 	        'columns' => array(
 	            'created',
 	            'modified',
-	            'Person.name' => array('label' => 'Person'),
+	            'Person.name, Person.surname' => array('label' => 'Person'),
 	            'Course.start_date' => array('label' => 'Course'),
 	            'paid',
 	            'actions' => array(

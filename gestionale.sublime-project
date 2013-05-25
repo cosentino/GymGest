@@ -1,0 +1,11 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/xampp/htdocs/gestionale"
+		}
+	],
+	"settings": {
+        "xdebug": { "url": "http://localhost/gestionale" }
+    }
+}

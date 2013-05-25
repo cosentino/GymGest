@@ -15,7 +15,7 @@ class PeopleController extends AppController {
     	'DataTable.DataTable' => array(
 	        'columns' => array(
 	        	'created',
-	            'Person.name' => array('label' => 'Person'),
+	            'Person.name, Person.surname' => array('label' => 'Person'),
 	            'MembershipType.name' => array('label' => 'MembershipType'),
 	            'valid_from',
 	            'valid_to',
